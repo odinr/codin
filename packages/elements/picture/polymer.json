@@ -4,7 +4,7 @@
   "shell": "picture.js",
   "builds": [
     { 
-      "name": "demo"
+      "name": "dev"
     }
   ]
 }

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <title>lit-element demo</title>
+  <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js" async></script>
+  <style>
+    cwc-picture:not([ready]){
+      visibility: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <script src="../picture.js" async type="module"></script>
+  <cwc-picture style="height: 40vw; width: 100%; margin-top: 100vh" size="cover" position="0% 20%">
+    <span style="padding: 1rem; margin: 1rem; background: rgba(0,0,0, 0.75); color: rgba(256,256,256, 0.75); display: inline-block">this image was lazy loaded</span>
+    <picture>
+      <source media="(min-width: 1441px)" data-srcset="../demo/i_1920.jpg">
+      <source media="(min-width: 961px)" data-srcset="../demo/i_1440.jpg">
+      <source media="(min-width: 481px)" data-srcset="../demo/i_960.jpg, ../demo/i_1920.jpg 2x">
+      <source data-srcset="../demo/i_480.jpg, ../demo/i_960.jpg 2x, ../demo/i_1440.jpg 3x, ../demo/i_1920.jpg 4x">
+      <img src="../demo/i_low.jpg" alt="image of a girl with flowers">
+    </picture>
+  </cwc-picture>
+</body>
+
+</html>

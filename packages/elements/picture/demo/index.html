@@ -5,9 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <title>lit-element demo</title>
-  <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js" async></script>
-  <script type="module" src="../lib/lazy-image-loader.js" async></script>  
-  
+  <script src="https://unpkg.com/@webcomponents/webcomponentsjs/webcomponents-loader.js" async></script>
   <style>
     cwc-picture:not([ready]){
       visibility: hidden;
@@ -16,12 +14,8 @@
 </head>
 
 <body>
-  <img data-src="./i_480.jpg" data-lazy  alt="image of a girl with flowers" width="480"/>
-  
-  <!-- <script nomodule src="../dist/picture.bundled.js" async></script>   -->
-  <!-- <script type="module" src="../dist/picture.mjs" async></script>   -->
-  <script type="module" src="../picture.js" async></script>  
-
+  <script src="https://unpkg.com/@codin/cwc-picture" async nomodule></script>
+  <script src="https://unpkg.com/@codin/cwc-picture?module" async type="module"></script>
   <cwc-picture style="height: 40vw; width: 100%; margin-top: 100vh" size="cover" position="0% 20%">
     <span style="padding: 1rem; margin: 1rem; background: rgba(0,0,0, 0.75); color: rgba(256,256,256, 0.75); display: inline-block">this image was lazy loaded</span>
     <picture>

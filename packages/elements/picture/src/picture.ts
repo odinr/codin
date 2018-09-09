@@ -3,7 +3,6 @@ import {styleString} from '@polymer/lit-element/lib/render-helpers';
 import {TemplateResult} from 'lit-html';
 import {observe} from './lib/lazy-data';
 
-export type PictureDisplay = 'background' | 'image';
 export type PictureFit = 'cover' | 'contain';
 
 const style = html`<style>
@@ -41,8 +40,7 @@ export class CodinWebComponentPicture extends LitElement {
     };
   }
 
-  public display: string = 'background';
-  public size: string = 'cover';
+  public size: PictureFit = 'cover';
   public position: string = 'center center';
   public ready: boolean = false;
   public shown: boolean = false;
