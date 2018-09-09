@@ -3,6 +3,7 @@
 <script src="https://unpkg.com/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
 <script src="https://unpkg.com/@codin/cwc-picture" async nomodule></script>
 <script src="https://unpkg.com/@codin/cwc-picture?module" async type="module"></script>
+
 <!-- by prefixing the srcset with data, the source will be initally loaded, then the srcset when the highres image is loaded  -->
 <cwc-picture size="contain" position="center">
   <img src="lowres.jpg" data-srcset="highres.jpg"/>
