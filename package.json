@@ -1,0 +1,14 @@
+{
+	"devDependencies": {
+		"intersection-observer": "^0.5.0",
+		"lerna": "^2.11.0"
+	},
+	"workspaces": [
+		"packages/elements/*"
+	],
+	"private": true,
+	"name": "codin_modules",
+	"version": "0.0.1",
+	"author": "Odin Rochmman <odin.rochmann@gmail.com>",
+	"license": "MIT"
+}

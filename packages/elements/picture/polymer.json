@@ -1,0 +1,10 @@
+{
+  "moduleResolution": "node",
+  "npm": true,
+  "shell": "picture.js",
+  "builds": [
+    { 
+      "name": "demo"
+    }
+  ]
+}
