@@ -1,15 +1,32 @@
 > ## 🛠 Status: In Development
+
+## bundle
+[NPM](https://www.npmjs.com/package/@codin/cwc-picture)
+```bash
+npm i -D @codin/cwc-picture
+```
+
+## usage
+make sure that the browsers support webcomponents
 ```html
 <script src="https://unpkg.com/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+````
+
+include the picture element (unless your building your own)
+```html
 <script src="https://unpkg.com/@codin/cwc-picture" async nomodule></script>
 <script src="https://unpkg.com/@codin/cwc-picture?module" async type="module"></script>
+```
 
-<!-- by prefixing the srcset with data, the source will be initally loaded, then the srcset when the highres image is loaded  -->
+Prefix src and/or srcset with data- for lazyloading.
+Prefixed images are not loaded until element is shown
+```html
 <cwc-picture size="contain" position="center">
   <img src="lowres.jpg" data-srcset="highres.jpg"/>
 </cwc-picture>
-
-<!-- the element also supports picure elements -->
+```
+Element also supports picure
+```html
 <cwc-picture size="cover" position="10% center">
   <picture>
     <source media="(min-width: 1441px)" data-srcset="highres.jpg"/>
