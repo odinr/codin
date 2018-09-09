@@ -17,6 +17,8 @@
   <picture>
 </cwc-picture>
 ```
+
+
 ## Attributes
 | Attribute | type  | options | default | reflect |
 |---|---|---|----|:----:
@@ -24,9 +26,6 @@
 | **position** | String | % or location | *center center* | x
 | *ready* | Boolean | NA | | x
 | *shown* | Boolean | NA | | x
-| *src* | String | NA | | -
-| *complete* | Promise | NA | | -
-| *image* | HTMLImageElement | NA | | -
 
 *options that are **NA**, is not ment to be set*
 
@@ -45,6 +44,7 @@
 >#### shown
 >Attribute set after the element has intersected with the viewport.
 
+
 ## Properties
 | name | type  | getter | setter
 |---|---|---|----|
@@ -60,6 +60,7 @@
 
 >#### image
 >returns the slotted image element
+
 
 ## Events
 
