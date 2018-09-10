@@ -1,12 +1,12 @@
 > ## 🛠 Status: In Development
 
-## bundle
+## Bundle
 [NPM](https://www.npmjs.com/package/@codin/cwc-picture)
 ```bash
 npm i -D @codin/cwc-picture
 ```
 
-## usage
+## Usage
 make sure that the browsers support webcomponents
 ```html
 <script src="https://unpkg.com/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
@@ -25,6 +25,7 @@ Prefixed images are not loaded until element is shown
   <img src="lowres.jpg" data-srcset="highres.jpg"/>
 </cwc-picture>
 ```
+
 Element also supports picure
 ```html
 <cwc-picture size="cover" position="10% center">
@@ -64,7 +65,7 @@ Element also supports picure
 
 ## Properties
 | name | type  | getter | setter
-|---|---|---|----|
+|---|---|:---:|:----:|
 | *src* | String | x | -
 | *complete* | Promise | x | -
 | *image* | HTMLImageElement | x | -
@@ -80,6 +81,9 @@ Element also supports picure
 
 
 ## Events
+| name | type | event
+|---|---|---
+|change|CustomEvent|CustomEventInit
 
 >#### change
 >Triggered when a new resource is loaded on the slotted image
