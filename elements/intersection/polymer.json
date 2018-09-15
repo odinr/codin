@@ -1,0 +1,10 @@
+{
+  "moduleResolution": "node",
+  "npm": true,
+  "shell": "index.js",
+  "builds": [
+    { 
+      "name": "dev"
+    }
+  ]
+}

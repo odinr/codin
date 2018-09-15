@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <title>lit-element demo</title>
+  <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js" async></script>
+  <style>
+    cwc-intersection-panel{
+      display: block;
+      opacity: 0;
+      margin: 200vh auto; 
+      padding: 10rem 1rem; 
+      text-align: center;
+      display: block;
+      color: rgba(255,255,255,0.85);
+      background-color: transparent;
+      transition-property: opacity, background-color;
+      transition-duration: 1s;
+    }
+    cwc-intersection-panel[visible]{
+      opacity: 1;
+      background-color: cornflowerblue;
+    }
+  </style>
+</head>
+
+<body>
+  <script src="../index.js" async type="module"></script>
+  <cwc-intersection-panel>DEMO</cwc-intersection-panel>
+</body>
+
+</html>
