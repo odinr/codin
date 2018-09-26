@@ -1,4 +1,9 @@
+.vscode
+.DS_STORE
+
 node_modules
+
+elements/*/dist
 packages/wip
 
-.DS_STORE
+yarn-error.log

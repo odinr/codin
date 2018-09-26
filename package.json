@@ -4,11 +4,17 @@
 		"lerna": "^2.11.0"
 	},
 	"workspaces": [
-		"packages/elements/*"
+		"build/*",
+		"elements/*",
+		"utils/*"
 	],
 	"private": true,
 	"name": "codin_modules",
 	"version": "0.0.1",
 	"author": "Odin Rochmman <odin.rochmann@gmail.com>",
-	"license": "MIT"
+	"license": "MIT",
+	"dependencies": {
+		"filesize": "^3.6.1",
+		"rollup": "^0.66.2"
+	}
 }

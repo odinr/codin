@@ -1,3 +1,4 @@
 **/node_modules
-packages/elements/*/dist
-packages/elements/*/lib
+elements/*/*.js
+**/dist
+**/bin
