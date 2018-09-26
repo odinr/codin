@@ -1,0 +1,22 @@
+{
+  "name": "@codin/promise-event",
+  "version": "0.0.1",
+  "description": "Create a promise when event is triggered",
+  "main": "index.js",
+  "module": "dist/promiseevent.es.js",
+  "unpkg": "dist/promiseevent.iife.js",
+  "files": [
+    "dist",
+    "promise-event.*"
+  ],
+  "scripts": {
+    "prebuild": "tsc",
+    "build": "cwc-builder"
+  },
+  "author": "Odin thomas rochmann <odin.rochmann@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "@codin/rollup-cwc": "^0.0.1"
+  }
+}
