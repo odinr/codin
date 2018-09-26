@@ -1,10 +1,11 @@
 import {
-  CustomIntersectionEvent,
-  CustomIntersectionEventTypes,
+  IntersectionEvent,
+  IntersectionEventTypes,
   canObserveIntersection,
   createIntersctionObserver,
-} from './lib/intersection-observer.js';
-export * from './lib/intersection-observer.js';
+} from './lib/intersection-observer';
+
+export * from './lib/intersection-observer';
 
 export enum attributes {
  disabled = 'disabled',
@@ -41,7 +42,7 @@ export enum attributes {
  *
  * @event @see IntersectionObserver
  */
-export class CustomIntersectionPanel extends HTMLElement {
+export class IntersectionPanel extends HTMLElement {
 
  protected _observer: IntersectionObserver|undefined;
 
@@ -101,9 +102,9 @@ export class CustomIntersectionPanel extends HTMLElement {
  /**
   * @internal should only be called internally
   * Handles events from observer
-  * @param param0 {CustomIntersectionEvent}
+  * @param param0 {IntersectionEvent}
   */
- handleEvent({detail}: CustomIntersectionEvent<CustomIntersectionEventTypes.intersection>) {
+ handleEvent({detail}: IntersectionEvent<IntersectionEventTypes.intersection>) {
   const {entry} = detail;
   entry.isIntersecting ? this.setAttribute(attributes.visible, '') : this.removeAttribute(attributes.visible);
  }
@@ -113,7 +114,7 @@ export class CustomIntersectionPanel extends HTMLElement {
   */
  public observe(): void {
   this._observer || this._createObserver();
-  this.addEventListener(CustomIntersectionEventTypes.intersection, this, false);
+  this.addEventListener(IntersectionEventTypes.intersection, this, false);
   this._observer && this._observer.observe(this);
  }
 
@@ -121,7 +122,7 @@ export class CustomIntersectionPanel extends HTMLElement {
   * Stop observing element, this will not remove the observer.
   */
  public unobserve(): void {
-  this.removeEventListener(CustomIntersectionEventTypes.intersection, this);
+  this.removeEventListener(IntersectionEventTypes.intersection, this);
   this._observer && this._observer.unobserve(this);
  }
 
@@ -155,4 +156,4 @@ export class CustomIntersectionPanel extends HTMLElement {
  }
 }
 
-export default CustomIntersectionPanel;
+export default IntersectionPanel;

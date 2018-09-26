@@ -1,5 +1,5 @@
-import { CustomIntersectionEvent, CustomIntersectionEventTypes } from './lib/intersection-observer.js';
-export * from './lib/intersection-observer.js';
+import { IntersectionEvent, IntersectionEventTypes } from './lib/intersection-observer';
+export * from './lib/intersection-observer';
 export declare enum attributes {
     disabled = "disabled",
     root = "root",
@@ -34,7 +34,7 @@ export declare enum attributes {
  *
  * @event @see IntersectionObserver
  */
-export declare class CustomIntersectionPanel extends HTMLElement {
+export declare class IntersectionPanel extends HTMLElement {
     protected _observer: IntersectionObserver | undefined;
     /** @inheritDoc */
     static readonly observedAttributes: attributes[];
@@ -64,9 +64,9 @@ export declare class CustomIntersectionPanel extends HTMLElement {
     /**
      * @internal should only be called internally
      * Handles events from observer
-     * @param param0 {CustomIntersectionEvent}
+     * @param param0 {IntersectionEvent}
      */
-    handleEvent({ detail }: CustomIntersectionEvent<CustomIntersectionEventTypes.intersection>): void;
+    handleEvent({ detail }: IntersectionEvent<IntersectionEventTypes.intersection>): void;
     /**
      * Start observing element
      */
@@ -81,4 +81,4 @@ export declare class CustomIntersectionPanel extends HTMLElement {
     protected _getObserverOptions(): IntersectionObserverInit;
     protected _visible(visible: Boolean): void;
 }
-export default CustomIntersectionPanel;
+export default IntersectionPanel;

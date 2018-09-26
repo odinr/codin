@@ -1,8 +1,8 @@
 export var CustomIntersectionEventTypes;
 (function (CustomIntersectionEventTypes) {
-    CustomIntersectionEventTypes["intersection"] = "cwcIntersection";
-    CustomIntersectionEventTypes["visible"] = "cwcVisible";
-    CustomIntersectionEventTypes["hidden"] = "cwcHidden";
+    CustomIntersectionEventTypes["intersection"] = "cwc.intersection";
+    CustomIntersectionEventTypes["visible"] = "cwc.intersection.in";
+    CustomIntersectionEventTypes["hidden"] = "cwc.intersection.out";
 })(CustomIntersectionEventTypes || (CustomIntersectionEventTypes = {}));
 export class CustomIntersectionEvent extends CustomEvent {
     constructor(type, detail) {

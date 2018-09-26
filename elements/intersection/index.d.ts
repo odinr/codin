@@ -1,3 +1,3 @@
-import element from './intersection-panel.js';
-export * from './intersection-panel.js';
+import element from './build/intersection-panel';
+export * from './build/intersection-panel';
 export default element;

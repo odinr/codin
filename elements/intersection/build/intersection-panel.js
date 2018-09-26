@@ -1,5 +1,5 @@
-import { CustomIntersectionEventTypes, canObserveIntersection, createIntersctionObserver, } from './lib/intersection-observer.js';
-export * from './lib/intersection-observer.js';
+import { IntersectionEventTypes, canObserveIntersection, createIntersctionObserver, } from './lib/intersection-observer';
+export * from './lib/intersection-observer';
 export var attributes;
 (function (attributes) {
     attributes["disabled"] = "disabled";
@@ -35,7 +35,7 @@ export var attributes;
  *
  * @event @see IntersectionObserver
  */
-export class CustomIntersectionPanel extends HTMLElement {
+export class IntersectionPanel extends HTMLElement {
     /** @inheritDoc */
     static get observedAttributes() {
         return [attributes.disabled];
@@ -85,7 +85,7 @@ export class CustomIntersectionPanel extends HTMLElement {
     /**
      * @internal should only be called internally
      * Handles events from observer
-     * @param param0 {CustomIntersectionEvent}
+     * @param param0 {IntersectionEvent}
      */
     handleEvent({ detail }) {
         const { entry } = detail;
@@ -96,14 +96,14 @@ export class CustomIntersectionPanel extends HTMLElement {
      */
     observe() {
         this._observer || this._createObserver();
-        this.addEventListener(CustomIntersectionEventTypes.intersection, this, false);
+        this.addEventListener(IntersectionEventTypes.intersection, this, false);
         this._observer && this._observer.observe(this);
     }
     /**
      * Stop observing element, this will not remove the observer.
      */
     unobserve() {
-        this.removeEventListener(CustomIntersectionEventTypes.intersection, this);
+        this.removeEventListener(IntersectionEventTypes.intersection, this);
         this._observer && this._observer.unobserve(this);
     }
     _recreateObserver() {
@@ -131,5 +131,5 @@ export class CustomIntersectionPanel extends HTMLElement {
         visible ? this.setAttribute(attributes.visible, '') : this.removeAttribute(attributes.visible);
     }
 }
-export default CustomIntersectionPanel;
+export default IntersectionPanel;
 //# sourceMappingURL=intersection-panel.js.map

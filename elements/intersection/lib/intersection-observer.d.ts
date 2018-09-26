@@ -1,7 +1,7 @@
 export declare enum CustomIntersectionEventTypes {
-    intersection = "cwcIntersection",
-    visible = "cwcVisible",
-    hidden = "cwcHidden"
+    intersection = "cwc.intersection",
+    visible = "cwc.intersection.in",
+    hidden = "cwc.intersection.out"
 }
 export interface CustomIntersectionEventDetail {
     observer: IntersectionObserver;

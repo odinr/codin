@@ -1,33 +1,40 @@
 {
   "name": "@codin/cwc-intersection",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Panel that implements intersection observer, triggers events when intersecting",
   "author": "Odin thomas Rochmann",
   "license": "MIT",
   "private": false,
   "main": "index.js",
-  "unpkg": "dist/intersection.js",
+  "esnext": "index.js",
   "module": "dist/intersection.mjs",
+  "unpkg": "dist/intersection.js",
+  "rollup": {
+    "iife": "dist/intersection.js",
+    "es": "dist/intersection.mjs"
+  },
   "files": [
-    "index.js",
+    "index.*",
+    "intersection-panel.*",
     "package.json",
     "LICENSE",
     "README.md",
     "dist",
     "lib"
   ],
+  "typings": "intersection-panel.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "prebuild": "tsc",
-    "build": "rollup -c",
-    "serve": "prpl-server"
+    "build": "cwc-builder"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.1",
-    "@babel/preset-env": "^7.0.0",
-    "@webcomponents/webcomponentsjs": "^2.1.2",
-    "prpl-server": "^1.2.0",
-    "rollup": "^0.65.2",
-    "rollup-plugin-babel": "^4.0.3",
-    "rollup-plugin-terser": "^2.0.2"
+    "@codin/rollup-cwc": "^0.0.1",
+    "@webcomponents/webcomponentsjs": "^2.1.3"
+  },
+  "dependencies": {
+    "@codin/promise-event": "^0.0.1"
   }
 }
