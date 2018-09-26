@@ -23,7 +23,6 @@ export interface RuntimeOptions {
 
 const colors = require('colors');
 const fileSize = require('filesize');
-const boxen = require('boxen');
 const {
  resolve,
  dirname,

@@ -7,7 +7,6 @@ const path = require('path');
 const colors = require('colors');
 
 const terser = require('rollup-plugin-terser').terser;
-const filesize = require('rollup-plugin-filesize');
 const resolve = require('rollup-plugin-node-resolve');
 const babel = require('rollup-plugin-babel');
 

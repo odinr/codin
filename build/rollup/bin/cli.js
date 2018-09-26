@@ -5,7 +5,6 @@ const rollup_1 = require("rollup");
 const rollup_config_1 = require("./rollup.config");
 const colors = require('colors');
 const fileSize = require('filesize');
-const boxen = require('boxen');
 const { resolve, dirname, relative } = require('path');
 const configFile = 'cwc.config.js';
 const defaultBuilds = [
