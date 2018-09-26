@@ -1,0 +1,28 @@
+{
+  "name": "@codin/event-observer",
+  "version": "0.0.1",
+  "description": "@todo",
+  "author": "Odin thomas Rochmann",
+  "license": "MIT",
+  "private": false,
+  "main": "index.js",
+  "module": "dist/eventobserver.es.js",
+  "unpkg": "dist/eventobserver.iife.js",
+  "files": [
+    "dist",
+    "build",
+    "index.*"
+  ],
+  "typings": "index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "prebuild": "tsc",
+    "build": "cwc-builder"
+  },
+  "devDependencies": {
+    "@codin/rollup-cwc": "^0.0.1",
+    "@webcomponents/webcomponentsjs": "^2.1.3"
+  }
+}
