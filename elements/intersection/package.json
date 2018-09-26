@@ -6,23 +6,15 @@
   "license": "MIT",
   "private": false,
   "main": "index.js",
-  "esnext": "index.js",
-  "module": "dist/intersection.mjs",
-  "unpkg": "dist/intersection.js",
-  "rollup": {
-    "iife": "dist/intersection.js",
-    "es": "dist/intersection.mjs"
-  },
+  "module": "dist/cwcintersection.es.js",
+  "unpkg": "dist/cwcintersection.iife.js",
   "files": [
-    "index.*",
-    "intersection-panel.*",
-    "package.json",
-    "LICENSE",
-    "README.md",
     "dist",
+    "build",
+    "index.*",
     "lib"
   ],
-  "typings": "intersection-panel.d.ts",
+  "typings": "index.d.ts",
   "publishConfig": {
     "access": "public"
   },
