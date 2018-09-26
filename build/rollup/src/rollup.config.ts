@@ -77,7 +77,6 @@ function getPlugins(build: CwcConfigBuild, options: BuildOptions) {
   const {compress, verbose} = options;
   const plugins = [
     resolve(),
-    // verbose && filesize(),
     compress && terser({ warnings: true, module: true }),
     babel(build.babel  || {
       presets: [['@babel/preset-env', {
