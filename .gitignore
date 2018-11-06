@@ -6,4 +6,4 @@ node_modules
 elements/*/dist
 packages/wip
 
-yarn-error.log
+*.log
