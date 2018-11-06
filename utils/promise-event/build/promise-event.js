@@ -1,21 +1,29 @@
-export function promiseEvent(element, type, callback) {
+/**
+ * Awaits an event to happen.
+ * When event is triggered, callback is called and removes listner.
+ * @param el Element to await event from
+ * @param type Type of event to await
+ * @param cb Callback when event fired
+ * @returns {Promise}
+ */
+export function promiseEvent(el, type, cb) {
     const resolver = (resolve, reject) => {
         return {
             handleEvent: function (evt) {
                 try {
-                    callback ? resolve(callback(element, evt)) : resolve();
+                    cb ? resolve(cb(el, evt)) : resolve();
                 }
                 catch (error) {
                     reject(error);
                 }
                 finally {
-                    element.removeEventListener(type, this, false);
+                    el.removeEventListener(type, this, false);
                 }
             }
         };
     };
     return new Promise((resolve, reject) => {
-        element.addEventListener(type, resolver(resolve, reject), false);
+        el.addEventListener(type, resolver(resolve, reject), false);
     });
 }
 export default promiseEvent;
