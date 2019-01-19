@@ -1,3 +1,5 @@
+export type EventType = keyof ElementEventMap | string;
+
 export interface PromisedElementEventCallback<E extends Event> {
  (element: Element, event?: E): any;
 }
@@ -10,9 +12,9 @@ export interface PromisedElementEventCallback<E extends Event> {
  * @param cb Callback when event fired
  * @returns {Promise}
  */
-export function promiseEvent<T extends keyof ElementEventMap, E extends Event>(
+export function promiseEvent<T extends EventType, E extends Event>(
  el: Element,
- type: T|string,
+ type: T,
  cb?: PromisedElementEventCallback<E>,
 ): Promise<any> {
  const resolver = (resolve?: any, reject?: any) => {
