@@ -1,12 +1,13 @@
 {
   "name": "@codin/event-promise",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Create a promise when event is triggered",
   "main": "index.js",
-  "module": "dist/promiseevent.es.js",
-  "unpkg": "dist/promiseevent.iife.js",
+  "module": "dist/eventpromise.es.js",
+  "unpkg": "dist/eventpromise.iife.js",
   "files": [
     "dist",
+    "build",
     "promise-event.*"
   ],
   "scripts": {

@@ -1,1 +1,1 @@
-export * from './build/promise-event';
+export * from './build/promise';

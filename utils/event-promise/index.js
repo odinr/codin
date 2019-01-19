@@ -1,2 +1,2 @@
-export * from './build/promise-event';
+export * from './build/promise';
 //# sourceMappingURL=index.js.map
