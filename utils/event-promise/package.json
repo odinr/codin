@@ -1,5 +1,5 @@
 {
-  "name": "@codin/promise-event",
+  "name": "@codin/event-promise",
   "version": "0.0.1",
   "description": "Create a promise when event is triggered",
   "main": "index.js",
