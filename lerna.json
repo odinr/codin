@@ -1,11 +1,14 @@
 {
   "lerna": "2.11.0",
   "packages": [
-    "build/*",
-    "elements/*",
-    "utils/*"
-],
-  "npmClient": "yarn",
-  "useWorkspaces": true,
+    "packages/*"
+  ],
+  "command": {
+    "bootstrap": {
+      "npmClientArgs": [
+        "--no-package-lock"
+      ]
+    }
+  },
   "version": "0.0.0"
 }

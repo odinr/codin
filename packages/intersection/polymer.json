@@ -1,0 +1,23 @@
+{
+  "entrypoint": "demo/index.html",
+  "shell": "intersection-element.js",
+  "sources": ["lib/**.js*"],
+  "fragments": [
+    "demo/*.jpg"
+  ],
+  "extraDependencies": ["node_modules/@webcomponents/webcomponentsjs/**"],
+  "moduleResolution": "node",
+  "addServiceWorker": false,
+  "addPushManifest": false,
+  "npm": true,
+  "autoBasePath": true,
+  "builds": [
+    {
+      "name": "dev",
+      "preset": "es6-unbundled",
+      "js": { "minify": false },
+      "html": { "minify": false },
+      "rewriteUrlsInTemplates": true 
+    }
+  ]
+}

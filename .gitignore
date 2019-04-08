@@ -1,9 +1,11 @@
 .vscode
 .DS_STORE
 
-node_modules
-
-elements/*/dist
-packages/wip
-
 *.log
+node_modules
+packages/**/package-lock.json
+packages/**/build
+packages/**/dist
+
+elements
+utils

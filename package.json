@@ -1,20 +1,32 @@
 {
-	"devDependencies": {
-		"intersection-observer": "^0.5.0",
-		"lerna": "^2.11.0"
-	},
-	"workspaces": [
-		"build/*",
-		"elements/*",
-		"utils/*"
-	],
-	"private": true,
-	"name": "codin_modules",
-	"version": "0.0.1",
-	"author": "Odin Rochmman <odin.rochmann@gmail.com>",
-	"license": "MIT",
-	"dependencies": {
-		"filesize": "^3.6.1",
-		"rollup": "^0.66.2"
-	}
+  "workspaces": [
+    "packages/*"
+  ],
+  "private": true,
+  "name": "codin_modules",
+  "version": "0.0.1",
+  "author": "Odin Rochmman <odin.rochmann@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:odinr/codin.git"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "lerna": "^2.11.0",
+    "lodash.camelcase": "^4.3.0",
+    "rollup": "^1.1.2",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-filesize": "^6.0.1",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-progress": "^1.0.0",
+    "rollup-plugin-size-snapshot": "^0.8.0",
+    "rollup-plugin-sizes": "^0.4.2",
+    "rollup-plugin-terser": "^4.0.4",
+    "tslib": "^1.9.3"
+  },
+  "_later": {
+    "doc": "typedoc --target es6 --mode modules --excludeNotExported --excludePrivate --ignoreCompilerErrors --out ./docs src"
+  }
 }
