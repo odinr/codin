@@ -30,11 +30,11 @@
     "prepack": "npm run build"
   },
   "devDependencies": {
-    "typescript": "^3.3.3"
+    "typescript": "^3.5.3"
   },
   "dependencies": {
     "@codin/cwc-intersection": "^2.0.0",
-    "lit-element": "2.0.1",
-    "tslib": "^1.9.3"
+    "lit-element": "2.2.1",
+    "tslib": "^1.10.0"
   }
 }
