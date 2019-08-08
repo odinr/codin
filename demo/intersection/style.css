@@ -1,0 +1,26 @@
+
+.wrapper {
+  height: 200px;
+  overflow: auto;
+}
+cwc-intersection {
+  display: flex;
+  opacity: 0.5;
+  transition: 0.5s linear;
+  justify-content: center;
+  margin: 250px 0;
+}
+
+
+cwc-intersection[intersecting] {
+  opacity: 1;
+}
+
+cwc-intersection p {
+  background: red;
+  padding: 2rem 5rem;
+  text-align: center;
+}
+cwc-intersection[intersected] p {
+  background: cornflowerblue;
+}

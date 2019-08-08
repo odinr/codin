@@ -1,0 +1,26 @@
+{
+  "entrypoint": "demo/index.html",
+  "fragments": [
+    "demo/intersection/index.html",
+    "demo/picture/index.html",
+    "demo/picture/lazy.html"
+  ],
+  "sources": [
+    "src/**/*",
+    "demo/index.html",
+    "demo/intersection/index.html",
+    "demo/picture/index.html",
+    "demo/picture/lazy.html"
+  ],
+  "extraDependencies": [
+    "bower_components/webcomponentsjs/*.js"
+  ],
+  "builds": [
+    {
+      "preset": "es5-unbundled"
+    }
+  ],
+  "npm": true,
+  "componentDir": "node_modules/",
+  "moduleResolution": "node"
+}

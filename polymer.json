@@ -1,0 +1,11 @@
+{
+  "entrypoint": "demo/index.html",
+  "fragments": [
+    "demo/intersection/index.html",
+    "demo/picture/index.html",
+    "demo/picture/lazy.html"
+  ],
+  "builds": [{ "preset": "es5-unbundled" }],
+  "moduleResolution": "node",
+  "npm": true
+}

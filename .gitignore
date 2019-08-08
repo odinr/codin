@@ -3,9 +3,14 @@
 
 *.log
 node_modules
-packages/**/package-lock.json
-packages/**/build
-packages/**/dist
+packages/*/package-lock.json
+packages/*/build
+packages/*/dist
+packages/*/lib
+packages/*/assets
+packages/*/*.d.ts
+packages/*/*.js
+packages/*/*.map
 
 elements
 utils

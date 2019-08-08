@@ -5,8 +5,12 @@
   "author": "Odin thomas Rochmann",
   "license": "MIT",
   "private": false,
-  "main": "dist/intersection-element.js",
-  "module": "intersection-element.js",
+  "main": "intersection-element.js",
+  "module": "dist/intersection-element.esm.js",
+  "browser": "dist/intersection-element.js",
+  "engines": {
+    "node": ">=8.0.0"
+  },
   "files": [
     "dist",
     "lib",
@@ -22,17 +26,15 @@
   "scripts": {
     "prebuild": "tsc",
     "build": "rm -rf dist ; rollup -c ../rollup.config.js",
-    "prepack": "npm run build",
-    "demo": "npm run build ; http-server -o demo"
+    "prepack": "npm run build"
   },
   "devDependencies": {
-    "http-server": "^0.11.1",
-    "typescript": "^3.3.3"
+    "typescript": "^3.5.3"
   },
   "dependencies": {
-    "custom-event-polyfill": "^1.0.6",
-    "intersection-observer": "^0.5.1",
-    "lit-element": "^2.0.0-rc.3",
-    "tslib": "^1.9.3"
+    "custom-event-polyfill": "^1.0.7",
+    "intersection-observer": "^0.7.0",
+    "lit-element": "2.2.1",
+    "tslib": "^1.10.0"
   }
 }

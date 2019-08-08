@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Intersection demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+    <script
+      type="module"
+      src="../../packages/input/input-element.js"
+    ></script>
+    <link rel="stylesheet" href="../style.css"> 
+    <style>
+    cwc-input{
+      margin: 15px 0;
+    }
+    </style>
+  </head>
+  <body class="unresolved">
+    <header>
+      <h2>Input</h2>
+    </header>
+    <main>
+      <form onsubmit="onSubmit(event)">
+        <div>
+          <cwc-input name="one" value="foo" active>
+            <input type="text">
+          </cwc-input>
+        </div>
+        <div>
+          <cwc-input name="two">
+            <input type="text">
+          </cwc-input>
+        </div>
+        <div>
+            <cwc-input name="two">
+              <textarea>csadasdas d ad adas asdasdas dasdasadasdsaa</textarea>
+            </cwc-input>
+          </div>
+        <button>test</button>
+      </form>
+      <script>
+        function onSubmit(e) {
+          e.preventDefault();
+          const formData = new FormData(e.target);
+          console.log(formData);
+        }
+      </script>
+    </main>
+    <script>
+      addEventListener("load", () => document.body.classList.remove("unresolved"));
+    </script>
+  </body>
+</html>
