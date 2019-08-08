@@ -8,6 +8,9 @@
   "main": "picture-element.js",
   "module": "dist/picture-element.esm.js",
   "browser": "dist/picture-element.js",
+  "engines": {
+    "node": ">=8.0.0"
+  },
   "files": [
     "dist",
     "lib",
