@@ -10,4 +10,5 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
+      - run: npm --prefix stories run install
       - run: npm --prefix stories run build-storybook
