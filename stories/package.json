@@ -1,0 +1,37 @@
+{
+  "name": "@codin/cwc-stories",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^3.5.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@codin/cwc-intersection": "^0.1.0",
+    "@codin/cwc-picture": "^0.1.0",
+    "@storybook/addon-a11y": "^5.1.10",
+    "@storybook/addon-actions": "^5.1.10",
+    "@storybook/addon-console": "^1.2.1",
+    "@storybook/addon-knobs": "^5.1.10",
+    "@storybook/addon-links": "^5.1.10",
+    "@storybook/addon-notes": "^5.1.10",
+    "@storybook/addon-storysource": "^5.1.10",
+    "@storybook/addon-viewport": "^5.1.10",
+    "@storybook/polymer": "^5.1.10",
+    "@webcomponents/webcomponentsjs": "^2.2.10",
+    "babel-loader": "^8.0.6",
+    "lit-html": "^1.1.1",
+    "polymer-webpack-loader": "^2.0.3"
+  }
+}
