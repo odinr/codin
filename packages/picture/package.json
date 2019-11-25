@@ -6,7 +6,6 @@
   "license": "MIT",
   "private": false,
   "main": "picture-element.js",
-  "module": "dist/picture-element.esm.js",
   "browser": "dist/picture-element.js",
   "engines": {
     "node": ">=8.0.0"
@@ -30,7 +29,8 @@
     "prepack": "npm run build"
   },
   "devDependencies": {
-    "typescript": "^3.5.3"
+    "rollup": "^1.27.5",
+    "typescript": "3.7.2"
   },
   "dependencies": {
     "@codin/cwc-intersection": "^0.1.0",

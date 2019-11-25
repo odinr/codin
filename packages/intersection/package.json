@@ -6,7 +6,6 @@
   "license": "MIT",
   "private": false,
   "main": "intersection-element.js",
-  "module": "dist/intersection-element.esm.js",
   "browser": "dist/intersection-element.js",
   "engines": {
     "node": ">=8.0.0"
@@ -25,11 +24,12 @@
   },
   "scripts": {
     "prebuild": "tsc",
-    "build": "rm -rf dist ; rollup -c ../rollup.config.js",
+    "build": "rm -rf dist && rollup -c ../rollup.config.js",
     "prepack": "npm run build"
   },
   "devDependencies": {
-    "typescript": "^3.5.3"
+    "rollup": "^1.27.5",
+    "typescript": "3.7.2"
   },
   "dependencies": {
     "custom-event-polyfill": "^1.0.7",

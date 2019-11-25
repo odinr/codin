@@ -12,5 +12,7 @@ packages/*/*.d.ts
 packages/*/*.js
 packages/*/*.map
 
+public
+
 elements
 utils
