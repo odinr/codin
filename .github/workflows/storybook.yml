@@ -1,14 +1,14 @@
-name: Storybook
+# name: Storybook
 
-on: [push]
+# on: [push]
 
-jobs:
-  create:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
-      - run: npm run bootstrap
-      - run: npm run storybook
+# jobs:
+#   create:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v1
+#       - uses: actions/setup-node@v1
+#         with:
+#           node-version: 12
+#       - run: npm run bootstrap
+#       - run: npm run storybook

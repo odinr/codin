@@ -12,7 +12,7 @@ packages/*/*.d.ts
 packages/*/*.js
 packages/*/*.map
 
-public
+# public
 
 elements
 utils
