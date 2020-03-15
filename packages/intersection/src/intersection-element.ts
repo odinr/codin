@@ -1,26 +1,18 @@
-import {
-  customElement,
-  LitElement,
-  property,
-} from 'lit-element';
+import { customElement, LitElement, property } from "lit-element";
 
-import { 
-  IntersectionEvent,
-  IntersectionEventInit
-} from './lib/intersection-event';
+import { IntersectionEvent, IntersectionEventInit } from "./intersection-event";
 
 // polyfill browser that miss intersection observation
-import 'intersection-observer';
+import "intersection-observer";
 
 // convert cvs to float array
-const converter = (s: string) =>  s.split(',').map((v) => parseFloat(v));
+const converter = (s: string) => s.split(",").map(v => parseFloat(v));
 
 /**
  * Custom element for registering intersections
  */
-@customElement('cwc-intersection')
+@customElement("cwc-intersection")
 export class IntersectionElement extends LitElement {
-
   /**
    * Enable or disable element
    */
@@ -54,14 +46,14 @@ export class IntersectionElement extends LitElement {
    * Intersection state.
    */
   get intersected(): boolean {
-    return this.hasAttribute('intersected');
+    return this.hasAttribute("intersected");
   }
 
   /**
    * Intersection options
    */
   get options(): IntersectionObserverInit {
-    const { margin : rootMargin, threshold } = this;
+    const { margin: rootMargin, threshold } = this;
     return { rootMargin, threshold };
   }
 
@@ -77,7 +69,7 @@ export class IntersectionElement extends LitElement {
    */
   disconnectedCallback(): void {
     super.disconnectedCallback();
-    this.setAttribute('intersected', '');
+    this.setAttribute("intersected", "");
     this._removeAdapter();
   }
 
@@ -89,7 +81,7 @@ export class IntersectionElement extends LitElement {
    */
   attributeChangedCallback(name: string, old: string, value: string): void {
     super.attributeChangedCallback(name, old, value);
-    if (['disabled', 'margin', 'threshold'].includes(name) && old !== value) {
+    if (["disabled", "margin", "threshold"].includes(name) && old !== value) {
       this._removeAdapter();
     }
   }
@@ -106,7 +98,10 @@ export class IntersectionElement extends LitElement {
    */
   protected _createAdapter(): void {
     this.observer && this._removeAdapter();
-    this.observer = new IntersectionObserver(this._onIntersection.bind(this), this.options);
+    this.observer = new IntersectionObserver(
+      this._onIntersection.bind(this),
+      this.options
+    );
     this.observer.observe(this);
   }
 
@@ -115,7 +110,7 @@ export class IntersectionElement extends LitElement {
    */
   protected _removeAdapter(): void {
     if (this.observer instanceof IntersectionObserver) {
-      this.removeAttribute('intersecting');
+      this.removeAttribute("intersecting");
       this.observer.disconnect();
       delete this.observer;
     }
@@ -128,11 +123,11 @@ export class IntersectionElement extends LitElement {
    */
   protected _onIntersection(entries: IntersectionObserverEntry[]): void {
     const [entry] = entries;
-    if (this._emitEntryEvent(entry, {bubbles: true})) {
-      const {isIntersecting} = entry;
-      this.toggleAttribute('intersecting', isIntersecting);
+    if (this._emitEntryEvent(entry, { bubbles: true })) {
+      const { isIntersecting } = entry;
+      this.toggleAttribute("intersecting", isIntersecting);
       if (isIntersecting) {
-        isIntersecting && this.setAttribute('intersected', '');
+        isIntersecting && this.setAttribute("intersected", "");
         this.once && (this.disabled = true);
       }
     }
@@ -144,18 +139,23 @@ export class IntersectionElement extends LitElement {
    * @param entry Intersected entry.
    * @param args Event args.
    */
-  protected _emitEntryEvent(entry: IntersectionObserverEntry, args?: CustomEventInit): boolean {
-    const {isIntersecting} = entry;
-    const type = isIntersecting ? 'intersectionin' : 'intersectionout';
+  protected _emitEntryEvent(
+    entry: IntersectionObserverEntry,
+    args?: CustomEventInit
+  ): boolean {
+    const { isIntersecting } = entry;
+    const type = isIntersecting ? "intersectionin" : "intersectionout";
     const eventInit: IntersectionEventInit = { ...args, detail: { entry } };
     const event = new IntersectionEvent(type, eventInit);
     this.dispatchEvent(event);
     return !event.defaultPrevented;
-   }
+  }
 }
+
+export default IntersectionElement;
 
 declare global {
   interface HTMLElementTagNameMap {
-    'cwc-intersection': IntersectionElement;
+    "cwc-intersection": IntersectionElement;
   }
 }

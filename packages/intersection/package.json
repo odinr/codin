@@ -5,15 +5,15 @@
   "author": "Odin thomas Rochmann",
   "license": "MIT",
   "private": false,
-  "main": "intersection-element.js",
+  "main": "lib/intersection-element.js",
+  "module": "lib/intersection-element.js",
   "browser": "dist/intersection-element.js",
   "engines": {
     "node": ">=8.0.0"
   },
   "files": [
     "dist",
-    "lib",
-    "intersection-element.*"
+    "lib"
   ],
   "repository": {
     "type": "git",
@@ -23,18 +23,13 @@
     "access": "public"
   },
   "scripts": {
-    "prebuild": "tsc",
-    "build": "rm -rf dist && rollup -c ../rollup.config.js",
-    "prepack": "npm run build"
-  },
-  "devDependencies": {
-    "rollup": "^1.27.5",
-    "typescript": "3.7.2"
+    "build": "rollup -c",
+    "bundle": "rollup -c --environment bundle",
+    "prepack": "npm run build && npm run bundle"
   },
   "dependencies": {
     "custom-event-polyfill": "^1.0.7",
     "intersection-observer": "^0.7.0",
-    "lit-element": "2.2.1",
-    "tslib": "^1.10.0"
+    "lit-element": "2.2.1"
   }
 }
