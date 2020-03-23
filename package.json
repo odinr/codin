@@ -4,7 +4,7 @@
   ],
   "private": true,
   "name": "codin_modules",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Odin Rochmman <odin.rochmann@gmail.com>",
   "license": "MIT",
   "repository": {
@@ -12,37 +12,30 @@
     "url": "git@github.com:odinr/codin.git"
   },
   "scripts": {
-    "bootstrap": "npm install && lerna bootstrap --hoist",
-    "build": "npm run build:typescript -- --verbose",
-    "build:typescript": "tsc --build packages/**/tsconfig.json",
-    "clean": "del-cli packages/*/node_modules packages/*/package-lock.json && npm run clean:typescript",
+    "clean": "lerna clean --yes && del-cli packages/*/package-lock.json && npm run clean:typescript",
     "clean:typescript": "npm run build:typescript -- --clean",
-    "watch": "npm run build:typescript -- -w",
-    "storybook": "npm --prefix stories run build-storybook"
+    "bootstrap": "npm install",
+    "update-packages": "lerna exec -- npx npm-check-updates -u",
+    "postupdate-packages": "lerna bootstrap --hoist",
+    "postinstall": "lerna bootstrap --hoist",
+    "build": "npm run build:typescript -- --verbose",
+    "build:typescript": "tsc --build packages/tsconfig.json",
+    "storybook": "npm --prefix stories run build-storybook",
+    "prepack": "npm run build"
   },
   "devDependencies": {
-    "@babel/core": "^7.7.4",
-    "@babel/preset-env": "^7.7.4",
-    "@webcomponents/webcomponentsjs": "^2.4.0",
-    "ajv": "^6.10.2",
     "del-cli": "^3.0.0",
     "lerna": "^3.19.0",
-    "lerna-update-wizard": "^0.17.5",
     "lodash.camelcase": "^4.3.0",
-    "rollup": "^1.27.5",
-    "rollup-plugin-babel": "^4.3.3",
+    "rollup": "^2.0.6",
     "rollup-plugin-filesize": "^6.2.1",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-progress": "^1.1.1",
-    "rollup-plugin-size-snapshot": "^0.10.0",
-    "rollup-plugin-sizes": "^0.5.1",
-    "rollup-plugin-terser": "^5.1.2",
-    "tslib": "^1.10.0"
+    "rollup-plugin-terser": "^5.3.0",
+    "tslib": "^1.11.1",
+    "typescript": "3.8.3"
   },
   "_later": {
     "doc": "typedoc --target es6 --mode modules --excludeNotExported --excludePrivate --ignoreCompilerErrors --out ./docs src"
-  },
-  "dependencies": {
-    "gulp": "^4.0.2"
   }
 }

@@ -6,16 +6,13 @@ import {
   eventOptions
 } from 'lit-element';
 
-import { repeat } from 'lit-html/directives/repeat';
 import { styleMap } from 'lit-html/directives/style-map';
 
-import '@codin/cwc-intersection';
+import "@codin/cwc-intersection";
+import PictureEvent from './picture-event';
+import style from './picture-element.css';
 
-import PictureEvent from './lib/picture-event';
-
-import style from './assets/picture-element.css';
-
-export type position = 'center' | 'top' | 'bottom' | 'left' | 'right';
+export type PictureAlignment = 'center' | 'top' | 'bottom' | 'left' | 'right';
 
 @customElement('cwc-picture')
 export class PictureElement extends LitElement {
@@ -34,7 +31,7 @@ export class PictureElement extends LitElement {
    * @see https://developer.mozilla.org/en-US/docs/Web/CSS/background-position
    */
   @property()
-  public position: position | string = 'center';
+  public position: PictureAlignment | string = 'center';
 
   /**
    * Toggle between cover and contain
@@ -92,7 +89,7 @@ export class PictureElement extends LitElement {
     };
     return html`
       <picture style="${styleMap(picture)}">
-        ${repeat(this.srcSets, (source) => source.srcset, (source) => source)}
+        ${this.srcSets.map(src => src)}
         <img
           src="${this.src}"
           height="${this.width}"
@@ -133,11 +130,5 @@ export class PictureElement extends LitElement {
        this._mediaMap.set(srcset, mql);
       }
      });
-  }
-}
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'cwc-picture': PictureElement;
   }
 }

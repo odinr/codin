@@ -4,34 +4,27 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -o ../docs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "typescript": "^3.7.2"
-  },
   "devDependencies": {
-    "@babel/core": "^7.7.4",
-    "@babel/plugin-proposal-object-rest-spread": "^7.7.4",
-    "@babel/plugin-syntax-dynamic-import": "^7.7.4",
-    "@codin/cwc-intersection": "^0.1.0",
-    "@codin/cwc-picture": "^0.1.0",
-    "@storybook/addon-a11y": "^5.2.6",
-    "@storybook/addon-actions": "^5.2.6",
+    "@babel/core": "^7.9.0",
+    "@storybook/addon-a11y": "^5.3.17",
+    "@storybook/addon-actions": "^5.3.17",
     "@storybook/addon-console": "^1.2.1",
-    "@storybook/addon-knobs": "^5.2.6",
-    "@storybook/addon-links": "^5.2.6",
-    "@storybook/addon-notes": "^5.2.6",
-    "@storybook/addon-storysource": "^5.2.6",
-    "@storybook/addon-viewport": "^5.2.6",
-    "@storybook/polymer": "^5.2.6",
-    "@webcomponents/webcomponentsjs": "^2.4.0",
-    "babel-loader": "^8.0.6",
-    "lit-html": "^1.1.2",
-    "polymer-webpack-loader": "^2.0.3"
+    "@storybook/addon-knobs": "^5.3.17",
+    "@storybook/addon-links": "^5.3.17",
+    "@storybook/addon-notes": "^5.3.17",
+    "@storybook/addon-storysource": "^5.3.17",
+    "@storybook/addon-viewport": "^5.3.17",
+    "@storybook/polymer": "^5.3.17",
+    "babel-loader": "^8.1.0",
+    "lit-html": "^1.2.1",
+    "polymer-webpack-loader": "^2.0.3",
+    "@codin/cwc-intersection": "../packages/intersection",
+    "@codin/cwc-picture": "../packages/picture"
   }
 }

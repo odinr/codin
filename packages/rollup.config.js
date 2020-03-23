@@ -1,10 +1,9 @@
 import resolve from "rollup-plugin-node-resolve";
-import babel from "rollup-plugin-babel";
-import preset from "@babel/preset-env";
-import { terser } from "rollup-plugin-terser";
 import camelCase from "lodash.camelcase";
 import progress from "rollup-plugin-progress";
 import filesize from "rollup-plugin-filesize";
+
+import { terser } from "rollup-plugin-terser";
 
 const pkg = require(`${process.cwd()}/package.json`);
 
@@ -19,7 +18,11 @@ export default {
     progress({ clearline: false }),
     filesize({ showMinifiedSize: false }),
     resolve(),
-    babel({ presets: [[preset, { targets: { esmodules: true } }]] }),
-    terser()
+    terser({
+      output: {
+        comments: false
+      },
+      compress: { drop_console: true }
+    })
   ]
 };

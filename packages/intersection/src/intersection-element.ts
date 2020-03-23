@@ -6,7 +6,7 @@ import { IntersectionEvent, IntersectionEventInit } from "./intersection-event";
 import "intersection-observer";
 
 // convert cvs to float array
-const converter = (s: string) => s.split(",").map(v => parseFloat(v));
+const converter = (s: string | null) => s?.split(",").map(v => parseFloat(v));
 
 /**
  * Custom element for registering intersections
@@ -82,15 +82,8 @@ export class IntersectionElement extends LitElement {
   attributeChangedCallback(name: string, old: string, value: string): void {
     super.attributeChangedCallback(name, old, value);
     if (["disabled", "margin", "threshold"].includes(name) && old !== value) {
-      this._removeAdapter();
+      this.disabled ? this._removeAdapter() : this._createAdapter();
     }
-  }
-
-  /**
-   * The element will not render, but checks states of the intersection adapter.
-   */
-  render(): void {
-    !this.disabled && !this.observer && this._createAdapter();
   }
 
   /**
@@ -153,9 +146,3 @@ export class IntersectionElement extends LitElement {
 }
 
 export default IntersectionElement;
-
-declare global {
-  interface HTMLElementTagNameMap {
-    "cwc-intersection": IntersectionElement;
-  }
-}

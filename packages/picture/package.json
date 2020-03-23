@@ -5,16 +5,15 @@
   "author": "Odin thomas Rochmann",
   "license": "MIT",
   "private": false,
-  "main": "picture-element.js",
-  "browser": "dist/picture-element.js",
+  "main": "lib/index.js",
+  "module": "lib/index.js",
+  "browser": "dist/index.js",
   "engines": {
     "node": ">=8.0.0"
   },
   "files": [
     "dist",
-    "lib",
-    "assets",
-    "picture-element.*"
+    "lib"
   ],
   "repository": {
     "type": "git",
@@ -24,17 +23,12 @@
     "access": "public"
   },
   "scripts": {
-    "prebuild": "tsc",
-    "build": "rm -rf ./dist ; rollup -c ../rollup.config.js",
-    "prepack": "npm run build"
-  },
-  "devDependencies": {
-    "rollup": "^1.27.5",
-    "typescript": "3.7.2"
+    "build": "tsc",
+    "prepack": "rollup -c ../rollup.config.js"
   },
   "dependencies": {
-    "@codin/cwc-intersection": "^0.1.0",
-    "lit-element": "2.2.1",
-    "tslib": "^1.10.0"
+    "@codin/cwc-intersection": "0.1.0",
+    "lit-element": "2.3.1",
+    "lit-html": "^1.2.1"
   }
 }
