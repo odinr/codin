@@ -1,0 +1,39 @@
+/*! For license information please see picture.9806b340374b18232eed.bundle.js.LICENSE.txt */
+(window.webpackJsonp=window.webpackJsonp||[]).push([[3,1],{654:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),__webpack_require__.d(__webpack_exports__,"IntersectionElement",(function(){return intersection_element_IntersectionElement})),__webpack_require__.d(__webpack_exports__,"IntersectionEvent",(function(){return IntersectionEvent}));var tslib=__webpack_require__(667),lit_element=__webpack_require__(666);__webpack_require__(668);class IntersectionEvent extends CustomEvent{constructor(type,eventInit){super(type,eventInit)}}__webpack_require__(669);let intersection_element_IntersectionElement=class IntersectionElement extends lit_element.a{get intersected(){return this.hasAttribute("intersected")}get options(){const{margin:rootMargin,threshold:threshold}=this;return{rootMargin:rootMargin,threshold:threshold}}createRenderRoot(){return this}disconnectedCallback(){super.disconnectedCallback(),this.setAttribute("intersected",""),this._removeAdapter()}attributeChangedCallback(name,old,value){super.attributeChangedCallback(name,old,value),["disabled","margin","threshold"].includes(name)&&old!==value&&(this.disabled?this._removeAdapter():this._createAdapter())}_createAdapter(){this.observer&&this._removeAdapter(),this.observer=new IntersectionObserver(this._onIntersection.bind(this),this.options),this.observer.observe(this)}_removeAdapter(){this.observer instanceof IntersectionObserver&&(this.removeAttribute("intersecting"),this.observer.disconnect(),delete this.observer)}_onIntersection(entries){const[entry]=entries;if(this._emitEntryEvent(entry,{bubbles:!0})){const{isIntersecting:isIntersecting}=entry;this.toggleAttribute("intersecting",isIntersecting),isIntersecting&&(isIntersecting&&this.setAttribute("intersected",""),this.once&&(this.disabled=!0))}}_emitEntryEvent(entry,args){const{isIntersecting:isIntersecting}=entry,type=isIntersecting?"intersectionin":"intersectionout",eventInit=Object.assign(Object.assign({},args),{detail:{entry:entry}}),event=new IntersectionEvent(type,eventInit);return this.dispatchEvent(event),!event.defaultPrevented}};Object(tslib.__decorate)([Object(lit_element.f)({type:Boolean,reflect:!0})],intersection_element_IntersectionElement.prototype,"disabled",void 0),Object(tslib.__decorate)([Object(lit_element.f)({type:Boolean})],intersection_element_IntersectionElement.prototype,"once",void 0),Object(tslib.__decorate)([Object(lit_element.f)()],intersection_element_IntersectionElement.prototype,"margin",void 0),Object(tslib.__decorate)([Object(lit_element.f)({type:Array,converter:s=>{var _a;return null===(_a=s)||void 0===_a?void 0:_a.split(",").map(v=>parseFloat(v))}})],intersection_element_IntersectionElement.prototype,"threshold",void 0),intersection_element_IntersectionElement=Object(tslib.__decorate)([Object(lit_element.c)("cwc-intersection")],intersection_element_IntersectionElement);__webpack_exports__.default=intersection_element_IntersectionElement},655:function(module,__webpack_exports__,__webpack_require__){"use strict";__webpack_require__.r(__webpack_exports__),__webpack_require__.d(__webpack_exports__,"PictureElement",(function(){return picture_element_PictureElement})),__webpack_require__.d(__webpack_exports__,"PictureEvent",(function(){return PictureEvent}));var tslib=__webpack_require__(667),lit_element=__webpack_require__(666),lit_html=__webpack_require__(658);const previousStylePropertyCache=new WeakMap,styleMap=Object(lit_html.c)(styleInfo=>part=>{if(!(part instanceof lit_html.a)||part instanceof lit_html.b||"style"!==part.committer.name||part.committer.parts.length>1)throw new Error("The `styleMap` directive must be used in the style attribute and must be the only part in the attribute.");const{committer:committer}=part,{style:style}=committer.element;let previousStyleProperties=previousStylePropertyCache.get(part);void 0===previousStyleProperties&&(style.cssText=committer.strings.join(" "),previousStylePropertyCache.set(part,previousStyleProperties=new Set)),previousStyleProperties.forEach(name=>{name in styleInfo||(previousStyleProperties.delete(name),-1===name.indexOf("-")?style[name]=null:style.removeProperty(name))});for(const name in styleInfo)previousStyleProperties.add(name),-1===name.indexOf("-")?style[name]=styleInfo[name]:style.setProperty(name,styleInfo[name])});__webpack_require__(654);class PictureEvent extends CustomEvent{constructor(type,eventInit){super(type,eventInit)}}var picture_event=PictureEvent;var picture_element_css=lit_element.b`
+  :host {
+    display: block;
+  }
+
+  svg {
+    height: 100%;
+    width: 100%;
+    fill: rgba(0, 0, 0, 0.25);
+  }
+
+  picture,
+  img {
+    display: block;
+  }
+
+  picture {
+    background-repeat: no-repeat;
+    height: 100%;
+  }
+
+  img {
+    visibility: hidden;
+    height: 100%;
+    width: 100%;
+  }
+`;let picture_element_PictureElement=class PictureElement extends lit_element.a{constructor(){super(...arguments),this.src="//:0",this.position="center",this._mediaMap=new WeakMap}get srcSets(){return[...this.querySelectorAll("source")].concat([...this.renderRoot.querySelectorAll("source")])}render(){return this.lazy?lit_element.e`<cwc-intersection @intersectionin="${()=>this.lazy=!1}"></cwc-intersection>`:this._renderPicture()}_renderPicture(){!("HTMLPictureElement"in window)&&this._polyfillPicture();const picture={"background-image":`url(${this.src})`,"background-position":this.position||"","background-size":this.cover?"cover":"contain"};return lit_element.e`
+      <picture style="${styleMap(picture)}">
+        ${this.srcSets.map(src=>src)}
+        <img
+          src="${this.src}"
+          height="${this.width}"
+          width="${this.height}"
+          @load="${this._onSourceChange}"
+        />
+      </picture>
+    `}_onSourceChange(e){const img=e.target;if(this._emitChange(img)){const{naturalHeight:naturalHeight,naturalWidth:naturalWidth,currentSrc:currentSrc}=img;this.height=naturalHeight,this.width=naturalWidth,this.src=currentSrc,this.setAttribute("loaded","")}}_emitChange(img,args){const{naturalHeight:naturalHeight,naturalWidth:naturalWidth,currentSrc:currentSrc}=img,detail={naturalHeight:naturalHeight,naturalWidth:naturalWidth,currentSrc:currentSrc},event=new picture_event("change",Object.assign(Object.assign({},args),{detail:detail}));return this.dispatchEvent(event),!event.defaultPrevented}_polyfillPicture(){this.srcSets.reverse().forEach(srcset=>{let mql=this._mediaMap.get(srcset);mql instanceof MediaQueryList||(mql=window.matchMedia(srcset.media),mql.matches&&(this.src=srcset.srcset),mql.addListener(()=>this.src=srcset.srcset),this._mediaMap.set(srcset,mql))})}};picture_element_PictureElement.styles=[picture_element_css],Object(tslib.__decorate)([Object(lit_element.f)()],picture_element_PictureElement.prototype,"src",void 0),Object(tslib.__decorate)([Object(lit_element.f)()],picture_element_PictureElement.prototype,"position",void 0),Object(tslib.__decorate)([Object(lit_element.f)({type:Boolean})],picture_element_PictureElement.prototype,"cover",void 0),Object(tslib.__decorate)([Object(lit_element.f)({type:Number,reflect:!0})],picture_element_PictureElement.prototype,"height",void 0),Object(tslib.__decorate)([Object(lit_element.f)({type:Number,reflect:!0})],picture_element_PictureElement.prototype,"width",void 0),Object(tslib.__decorate)([Object(lit_element.f)({type:Boolean})],picture_element_PictureElement.prototype,"lazy",void 0),Object(tslib.__decorate)([Object(lit_element.d)({passive:!0})],picture_element_PictureElement.prototype,"_onSourceChange",null),picture_element_PictureElement=Object(tslib.__decorate)([Object(lit_element.c)("cwc-picture")],picture_element_PictureElement)}}]);
+//# sourceMappingURL=picture.9806b340374b18232eed.bundle.js.map
