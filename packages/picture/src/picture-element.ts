@@ -4,17 +4,18 @@ import {
   LitElement,
   property,
   eventOptions
-} from 'lit-element';
+} from "lit-element";
 
-import { styleMap } from 'lit-html/directives/style-map';
+import { styleMap } from "lit-html/directives/style-map";
+import { repeat } from "lit-html/directives/repeat";
 
 import "@codin/cwc-intersection";
-import PictureEvent from './picture-event';
-import style from './picture-element.css';
+import PictureEvent from "./picture-event";
+import style from "./picture-element.css";
 
-export type PictureAlignment = 'center' | 'top' | 'bottom' | 'left' | 'right';
+export type PictureAlignment = "center" | "top" | "bottom" | "left" | "right";
 
-@customElement('cwc-picture')
+@customElement("cwc-picture")
 export class PictureElement extends LitElement {
   static styles = [style];
 
@@ -24,14 +25,14 @@ export class PictureElement extends LitElement {
    * Use of a data-URI for src is encouraged for instant rendering.
    */
   @property()
-  public src: string = '//:0';
+  public src: string = "//:0";
 
   /**
    * position of image
    * @see https://developer.mozilla.org/en-US/docs/Web/CSS/background-position
    */
   @property()
-  public position: PictureAlignment | string = 'center';
+  public position: PictureAlignment | string = "center";
 
   /**
    * Toggle between cover and contain
@@ -60,7 +61,7 @@ export class PictureElement extends LitElement {
   @property({ type: Boolean })
   public lazy?: boolean;
 
-  private _mediaMap: WeakMap<HTMLSourceElement,MediaQueryList> = new WeakMap();
+  private _mediaMap: WeakMap<HTMLSourceElement, MediaQueryList> = new WeakMap();
 
   /**
    * Return the current source sets
@@ -68,28 +69,30 @@ export class PictureElement extends LitElement {
    * by light dom is moved inside the shadow.
    */
   public get srcSets(): HTMLSourceElement[] {
-    return [...this.querySelectorAll<'source'>('source')].concat([
-      ...(this.renderRoot as ShadowRoot).querySelectorAll<'source'>('source')
+    return [...this.querySelectorAll<"source">("source")].concat([
+      ...(this.renderRoot as ShadowRoot).querySelectorAll<"source">("source")
     ]);
   }
-
   render() {
     return this.lazy
-      ? html`<cwc-intersection @intersectionin="${() => (this.lazy = false)}"></cwc-intersection>`
+      ? html`<cwc-intersection @intersect-in="${() => (this.lazy = false)}"></cwc-intersection>`
       : this._renderPicture();
   }
 
-
   protected _renderPicture() {
-    !('HTMLPictureElement' in window) && this._polyfillPicture();
+    !("HTMLPictureElement" in window) && this._polyfillPicture();
     const picture = {
-      'background-image': `url(${this.src})`,
-      'background-position': this.position || '',
-      'background-size': this.cover ? 'cover' : 'contain'
+      "background-image": `url(${this.src})`,
+      "background-position": this.position || "",
+      "background-size": this.cover ? "cover" : "contain"
     };
     return html`
       <picture style="${styleMap(picture)}">
-        ${this.srcSets.map(src => src)}
+        ${repeat(
+          this.srcSets,
+          src => src.srcset || src.src,
+          src => src
+        )}
         <img
           src="${this.src}"
           height="${this.width}"
@@ -103,32 +106,32 @@ export class PictureElement extends LitElement {
   @eventOptions({ passive: true })
   protected _onSourceChange(e: Event) {
     const img = e.target as HTMLImageElement;
-    if (this._emitChange(img)) {
-      const { naturalHeight, naturalWidth, currentSrc } = img;
+    const { naturalHeight, naturalWidth, currentSrc } = img;
+    if (this.src !== currentSrc && this._emitChange(img)) {
+      this.src = currentSrc;
       this.height = naturalHeight;
       this.width = naturalWidth;
-      this.src = currentSrc;
-      this.setAttribute('loaded', '');
+      this.setAttribute("loaded", "");
     }
   }
 
   protected _emitChange(img: HTMLImageElement, args?: CustomEventInit) {
     const { naturalHeight, naturalWidth, currentSrc } = img;
     const detail = { naturalHeight, naturalWidth, currentSrc };
-    const event = new PictureEvent('change', { ...args, detail });
+    const event = new PictureEvent("picture-load", { ...args, detail });
     this.dispatchEvent(event);
     return !event.defaultPrevented;
   }
 
   protected _polyfillPicture() {
-    this.srcSets.reverse().forEach((srcset) => {
+    this.srcSets.reverse().forEach(srcset => {
       let mql = this._mediaMap.get(srcset);
       if (!(mql instanceof MediaQueryList)) {
-       mql = window.matchMedia(srcset.media);
-       mql.matches && (this.src = srcset.srcset);
-       mql.addListener(() => this.src = srcset.srcset);
-       this._mediaMap.set(srcset, mql);
+        mql = window.matchMedia(srcset.media);
+        mql.matches && (this.src = srcset.srcset);
+        mql.addListener(() => (this.src = srcset.srcset));
+        this._mediaMap.set(srcset, mql);
       }
-     });
+    });
   }
 }

@@ -12,7 +12,7 @@ export default {
   output: {
     name: camelCase(pkg.name),
     format: "esm",
-    file: pkg.browser
+    dir: "dist"
   },
   plugins: [
     progress({ clearline: false }),

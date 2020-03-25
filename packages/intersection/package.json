@@ -7,7 +7,6 @@
   "private": false,
   "main": "lib/index.js",
   "module": "lib/index.js",
-  "browser": "dist/index.js",
   "engines": {
     "node": ">=8.0.0"
   },
@@ -24,11 +23,15 @@
   },
   "scripts": {
     "build": "tsc -b",
-    "prepack": "rollup -c ../rollup.config.js"
+    "prepack": "npx rollup -c ../rollup.config.js"
+  },
+  "peerDependencies": {
+    "lit-element": "2.3.x",
+    "lit-html": "1.2.x"
   },
   "dependencies": {
     "custom-event-polyfill": "^1.0.7",
-    "intersection-observer": "^0.7.0",
-    "lit-element": "2.3.1"
+    "fast-deep-equal": "^3.1.1",
+    "intersection-observer": "^0.7.0"
   }
 }

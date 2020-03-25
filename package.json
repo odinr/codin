@@ -19,13 +19,16 @@
     "postupdate-packages": "lerna bootstrap --hoist",
     "postinstall": "lerna bootstrap --hoist",
     "build": "npm run build:typescript -- --verbose",
-    "build:typescript": "tsc --build packages/tsconfig.json",
-    "storybook": "npm --prefix stories run build-storybook",
+    "build:typescript": "tsc -b",
+    "build:storybook": "npm --prefix stories run build-storybook",
+    "postbuild:storybook": "git add -u docs && git commit -m 'doc: update docs 📑'",
     "prepack": "npm run build"
   },
   "devDependencies": {
     "del-cli": "^3.0.0",
     "lerna": "^3.19.0",
+    "lit-element": "2.3.1",
+    "lit-html": "^1.2.1",
     "lodash.camelcase": "^4.3.0",
     "rollup": "^2.0.6",
     "rollup-plugin-filesize": "^6.2.1",

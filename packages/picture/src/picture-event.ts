@@ -6,7 +6,7 @@ export interface PictureEventDetail {
 
 export type PictureEventInit = CustomEventInit<PictureEventDetail>;
 
-export type PictureEventType = 'change';
+export type PictureEventType = 'picture-load';
 
 /**
  * Event triggered when picture source change.
@@ -20,7 +20,7 @@ export class PictureEvent<T extends PictureEventType> extends CustomEvent<Pictur
 
 declare global {
  interface ElementEventMap {
-   'change': PictureEvent<'change'>;
+   'picture-load': PictureEvent<'picture-load'>;
  }
 }
 

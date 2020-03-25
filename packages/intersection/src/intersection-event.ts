@@ -17,8 +17,8 @@ export type IntersectionEventInit = CustomEventInit<IntersectionEventDetail>;
  */
 export type IntersectionEventType =
   'intersection'|
-  'intersectionin'|
-  'intersectionout';
+  'intersect-in'|
+  'intersect-out';
 
 /**
  * Event triggered when intersecting.
@@ -33,8 +33,8 @@ export class IntersectionEvent<T extends IntersectionEventType> extends CustomEv
 declare global {
  interface ElementEventMap {
    'intersection': IntersectionEvent<'intersection'>;
-   'intersectionin': IntersectionEvent<'intersectionin'>;
-   'intersectionout': IntersectionEvent<'intersectionout'>;
+   'intersect-in': IntersectionEvent<'intersect-in'>;
+   'intersect-out': IntersectionEvent<'intersect-out'>;
  }
 }
 

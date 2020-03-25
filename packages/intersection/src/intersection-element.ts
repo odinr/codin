@@ -64,6 +64,11 @@ export class IntersectionElement extends LitElement {
     return this;
   }
 
+  connectedCallback(): void {
+    super.disconnectedCallback();
+    this.disabled || this._createAdapter();
+  }
+
   /**
    * When element is removed from DOM, remove adapter and clear state.
    */
@@ -137,7 +142,7 @@ export class IntersectionElement extends LitElement {
     args?: CustomEventInit
   ): boolean {
     const { isIntersecting } = entry;
-    const type = isIntersecting ? "intersectionin" : "intersectionout";
+    const type = isIntersecting ? "intersect-in" : "intersect-out";
     const eventInit: IntersectionEventInit = { ...args, detail: { entry } };
     const event = new IntersectionEvent(type, eventInit);
     this.dispatchEvent(event);
@@ -146,3 +151,9 @@ export class IntersectionElement extends LitElement {
 }
 
 export default IntersectionElement;
+
+declare global {
+  interface HTMLElementTagNameMap {
+    "cwc-intersection": IntersectionElement;
+  }
+}
