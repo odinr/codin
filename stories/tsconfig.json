@@ -1,0 +1,20 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "module": "ESNext",
+    "composite": false,
+    "declaration": false
+  },
+  "include": [
+    "src/**/*.ts", "typings/*.d.ts"
+  ],
+  "references": [
+    {
+      "path": "../packages/intersection"
+    },
+    {
+      "path": "../packages/intersection"
+    }
+  ]
+}

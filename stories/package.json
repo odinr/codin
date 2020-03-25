@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -s ./public,./static -p 6006",
     "build-storybook": "build-storybook -o ../docs"
   },
   "keywords": [],
@@ -12,19 +12,24 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.9.0",
+    "@codin/cwc-intersection": "../packages/intersection",
+    "@codin/cwc-picture": "../packages/picture",
     "@storybook/addon-a11y": "^5.3.17",
     "@storybook/addon-actions": "^5.3.17",
+    "@storybook/addon-backgrounds": "^5.3.17",
     "@storybook/addon-console": "^1.2.1",
+    "@storybook/addon-docs": "^5.3.17",
+    "@storybook/addon-info": "^5.3.17",
     "@storybook/addon-knobs": "^5.3.17",
     "@storybook/addon-links": "^5.3.17",
     "@storybook/addon-notes": "^5.3.17",
     "@storybook/addon-storysource": "^5.3.17",
     "@storybook/addon-viewport": "^5.3.17",
-    "@storybook/polymer": "^5.3.17",
+    "@storybook/web-components": "^5.3.17",
     "babel-loader": "^8.1.0",
-    "lit-html": "^1.2.1",
-    "polymer-webpack-loader": "^2.0.3",
-    "@codin/cwc-intersection": "../packages/intersection",
-    "@codin/cwc-picture": "../packages/picture"
-  }
+    "file-loader": "^6.0.0",
+    "react-docgen-typescript-loader": "^3.7.1",
+    "ts-loader": "^6.2.2"
+  },
+  "dependencies": {}
 }
