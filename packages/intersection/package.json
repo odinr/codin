@@ -1,6 +1,6 @@
 {
   "name": "@codin/cwc-intersection",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Panel that implements intersection observer, triggers events when intersecting",
   "author": "Odin thomas Rochmann",
   "license": "MIT",
