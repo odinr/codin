@@ -1,3 +1,5 @@
+[![npm version](https://img.shields.io/npm/v/@codin/cwc-intersection?style=for-the-badge)](https://www.npmjs.com/package/@codin/cwc-intersection)
+
 # Intersection Element
 
 Element for detecting intersection.
@@ -21,8 +23,9 @@ Intersection offset, just like normal css margins.
 Decimal or CSV decimals `.1,.5,.9` when used from html. flaot array when set by JS
 
 ## Events
-- `intersectionin` triggerd when intersecting
-- `intersectionout` triggerd when not intersecting
+- `intersection` triggerd when intersection
+- `intersect-in` triggerd when intersecting
+- `intersect-out` triggerd when not intersecting
 
 ## Example
 ```html
