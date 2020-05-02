@@ -5,7 +5,8 @@
     "moduleResolution": "node",
     "lib": ["esnext", "dom", "dom.iterable"],
     "declaration": true,
-    "inlineSourceMap": true,
+    // "inlineSourceMap": true,
+    "sourceMap": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
@@ -15,18 +16,19 @@
     "strict": true,
     "baseUrl": "./packages",
     "paths": {
-      "@codin/cwc-*": ["./packages/*/src"]
+      "@codin/cwc-*": ["./*/src"],
     },
     "noEmitHelpers": true,
     "importHelpers": true,
     "composite": true,
   },
   "include": [
-    "src/*.ts"
+    "./packages/*/tsconfig.json", 
   ],
   "exclude": ["node_modules"],
   "references": [
-    {"path": "packages/intersection"},
-    {"path": "packages/picture"}
+    {"path": "./packages/code-highlight"},
+    {"path": "./packages/intersection"},
+    {"path": "./packages/picture"}
   ]
 }

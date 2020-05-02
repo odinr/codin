@@ -9,12 +9,16 @@
   "include": [
     "src/**/*.ts", "typings/*.d.ts"
   ],
+  "exclude": ["**/static/**/*"],
   "references": [
     {
-      "path": "../packages/intersection"
+      "path": "../packages/intersection", "prepend": true 
     },
     {
-      "path": "../packages/intersection"
+      "path": "../packages/intersection", "prepend": true 
+    },
+    {
+      "path": "../packages/code-highlight", "prepend": true 
     }
   ]
 }

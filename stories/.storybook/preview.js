@@ -18,8 +18,18 @@ import {
 
 // configure(require.context('../stories', true, /\.stories\.(js|mdx)$/), module);
 
+const _customElementsDefine = window.customElements.define;
+window.customElements.define = (name, cl, conf) => {
+  if (!customElements.get(name)) {
+    _customElementsDefine.call(window.customElements, name, cl, conf);
+  }
+  else {
+    console.warn(`${name} has been defined twice`);
+  }
+};
+
 // force full reload to not reregister web components
-const req = require.context('../src', true, /\.stories\.(js|mdx)$/);
+const req = require.context('../src', true, /\.stories\.(ts|js|mdx)$/);
 configure(req, module);
 if (module.hot) {
   module.hot.accept(req.id, () => {

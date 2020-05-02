@@ -1,19 +1,35 @@
+const CopyPlugin = require("copy-webpack-plugin");
+const path = require("path");
+
+
+
 module.exports = {
   stories: ["../src/**/*.stories.ts"],
-  addons: ['@storybook/addon-knobs/register'],
+  addons: ["@storybook/addon-knobs/register"],
   webpackFinal: async config => {
     config.module.rules.push({
       test: /\.(ts|tsx)$/,
       use: [
         {
           loader: require.resolve("ts-loader")
-        },
-        {
-          loader: require.resolve("react-docgen-typescript-loader")
         }
+        // {
+        //   loader: require.resolve("react-docgen-typescript-loader")
+        // }
       ]
     });
     config.resolve.extensions.push(".ts", ".tsx");
+
+    config.plugins.push(
+      new CopyPlugin([
+        {
+          from: "*/static/**/*",
+          to: "static",
+          context: "./src",
+          transformPath: targetPath => targetPath.replace(/\/static\//, "/")
+        }
+      ])
+    );
 
     // // find web-components rule for extra transpilation
     const webComponentsRule = config.module.rules.find(rule => {
@@ -22,7 +38,9 @@ module.exports = {
     });
     // console.log(webComponentsRule);
     // // add your own `my-library`
-    webComponentsRule.test.push(/packages(\/|\\)*.*(\/|\\)lib(\/|\\)(.*)\.js$/);
+    webComponentsRule.test.push(
+      new RegExp(`packages(\\/|\\\\)*(\\/|\\\\)lib(\\/|\\\\)(.*)\\.js$`)
+    );
 
     // config.optimization = {
     //   runtimeChunk: 'single',

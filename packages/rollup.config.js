@@ -1,4 +1,5 @@
 import resolve from "rollup-plugin-node-resolve";
+import commonJs from "@rollup/plugin-commonjs";
 import camelCase from "lodash.camelcase";
 import progress from "rollup-plugin-progress";
 import filesize from "rollup-plugin-filesize";
@@ -18,6 +19,7 @@ export default {
     progress({ clearline: false }),
     filesize({ showMinifiedSize: false }),
     resolve(),
+    commonJs(),
     terser({
       output: {
         comments: false

@@ -8,6 +8,6 @@ packages/*/*.tsbuildinfo*
 packages/*/build
 packages/*/dist
 packages/*/lib
+packages/*/*.js
 
-elements
-utils
+utils/**/*

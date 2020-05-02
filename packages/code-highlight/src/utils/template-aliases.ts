@@ -1,0 +1,46 @@
+export type Aliases = Record<string, string>;
+
+export const resolveAlias = (alias: string): string => aliases[alias as keyof Aliases] || alias;
+
+export const aliases: Aliases = {
+  html: 'markup',
+  xml: 'markup',
+  svg: 'markup',
+  mathml: 'markup',
+  js: 'javascript',
+  g4: 'antlr4',
+  adoc: 'asciidoc',
+  shell: 'bash',
+  rbnf: 'bnf',
+  cs: 'csharp',
+  dotnet: 'csharp',
+  coffee: 'coffeescript',
+  jinja2: 'django',
+  'dns-zone': 'dns-zone-file',
+  dockerfile: 'docker',
+  gamemakerlanguage: 'gml',
+  hs: 'haskell',
+  tex: 'latex',
+  context: 'latex',
+  ly: 'lilypond',
+  emacs: 'lisp',
+  elisp: 'lisp',
+  'emacs-lisp': 'lisp',
+  md: 'markdown',
+  moon: 'moonscript',
+  n4jsd: 'n4js',
+  objectpascal: 'pascal',
+  px: 'pcaxis',
+  py: 'python',
+  robot: 'robotframework',
+  rb: 'ruby',
+  rq: 'sparql',
+  trig: 'turtle',
+  ts: 'typescript',
+  t4: 't4-cs',
+  vb: 'visual-basic',
+  xeoracube: 'xeora',
+  yml: 'yaml',
+};
+
+export default resolveAlias;
