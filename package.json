@@ -20,7 +20,7 @@
     "postinstall": "lerna bootstrap --hoist",
     "build": "npm run build:typescript -- --verbose",
     "build:typescript": "tsc -b",
-    "build:storybook": "npm --prefix stories run build-storybook",
+    "build:storybook": "npm --prefix stories run build",
     "postbuild:storybook": "git add -u docs && git commit -m 'doc: update docs 📑'",
     "prepack": "npm run build"
   },

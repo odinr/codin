@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "start-storybook -s ./public,./static -p 6006",
-    "build": "build-storybook -s ./static"
+    "build": "build-storybook -s ./static -o ../docs"
   },
   "keywords": [],
   "author": "",
