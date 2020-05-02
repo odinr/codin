@@ -1,6 +1,6 @@
 {
   "name": "@codin/cwc-picture",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "",
   "author": "Odin thomas Rochmann",
   "license": "MIT",
@@ -30,7 +30,7 @@
     "lit-html": "1.2.x"
   },
   "dependencies": {
-    "@codin/cwc-intersection": "^0.3.2"
+    "@codin/cwc-intersection": "^0.3.3"
   },
   "devDependencies": {
     "rollup": "2.7.6"
