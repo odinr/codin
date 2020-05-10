@@ -7,6 +7,8 @@ export const style = css`
     width: 0;
     margin: 0;
     overflow: hidden;
+    padding: 0;
+    margin: 0;
   }
 
   #index {
