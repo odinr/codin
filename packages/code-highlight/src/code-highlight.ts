@@ -89,7 +89,6 @@ export class CodeHighlightElement extends LitElement {
 
   protected _renderHighlight(start: number, end: number = start): TemplateResult | void {
     const elements = this._index?.children;
-    console.log(start, end, elements);
     if (!elements || elements.length < end) return;
 
     const startElement = elements[start - 1];
