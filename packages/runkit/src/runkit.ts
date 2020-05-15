@@ -1,47 +1,88 @@
-import { LitElement, customElement } from 'lit-element';
+import { LitElement, customElement, html, property, PropertyValues } from 'lit-element';
 // import { until } from 'lit-html/directives/until';
 
-const RunKit =
-    new Promise<GlobalRunKit>((resolve) => {
-        const src = "https://embed.runkit.com";
-        const loaded = () => resolve(window.RunKit);
-        if (!document.head.querySelector(`[src="${src}"]`)) {
-            const el = document.createElement('script');
-            el.setAttribute('src', src);
-            el.addEventListener('load', loaded, { once: true });
-            document.head.appendChild(el);
-        } else {
-            loaded();
-        }
-    });
+import { RunKit } from './runkit-loader';
+import { getFileContent } from './runkit-file-loader';
+import { style } from './runkit.style';
 
 @customElement('cwc-runkit')
 class RunKitElment extends LitElement {
-    // @query('#wrapper')
-    protected wrapper: HTMLElement;
 
+    static styles = [style];
+
+    @property({ type: String, attribute: false })
     protected source?: string;
 
-    constructor() {
-        super();
-        this.wrapper = document.createElement('div');
-        this.appendChild(this.wrapper);
-    }
+    @property({ type: Object, attribute: false })
+    notebook?: NotebookEmbed;
 
-    createRenderRoot() {
-        return this;
-    }
+    @property({ type: String })
+    src?: string;
 
-    initialize() {
+    @property({ reflect: false })
+    minHeight?: PropType<EmbedOptions, "minHeight">;
+
+    @property({ reflect: false })
+    gutterStyle?: PropType<EmbedOptions, "gutterStyle">;
+
+    @property({ reflect: false })
+    nodeVersion?: PropType<EmbedOptions, "nodeVersion">;
+
+    @property({ type: Boolean, reflect: false })
+    evaluateOnLoad?: PropType<EmbedOptions, "evaluateOnLoad">;
+
+    @property({ type: Boolean, reflect: false })
+    readOnly?: PropType<EmbedOptions, "readOnly">;
+
+    async initialize() {
         super.initialize();
-
         this.source = this.textContent!;
         this.textContent = "";
+    }
 
-        RunKit.then(runkit => runkit.createNotebook({
-            source: this.source!,
-            element: this.wrapper,
-        }));
+    async connectedCallback() {
+        super.connectedCallback();
+        const runkit = await RunKit;
+        const { source, minHeight, gutterStyle, evaluateOnLoad, nodeVersion, readOnly, title } = this;
+        this.notebook = runkit.createNotebook({
+            element: this,
+            source,
+            minHeight,
+            gutterStyle,
+            evaluateOnLoad,
+            nodeVersion,
+            readOnly,
+            title
+        });
+    }
+
+    public render() {
+        return html`<slot></slot>`;
+    }
+
+    public evaluate(){
+        this.notebook?.evaluate();
+    }
+
+    protected async updated(_changedProperties: PropertyValues) {
+        if (_changedProperties.has('src') && this.src) {
+            this.source = await getFileContent(this.src);
+        }
+        if (_changedProperties.has('source') && this.source) {
+            this.notebook?.setSource(this.source);
+        }
+        if (_changedProperties.has('minHeight') && this.minHeight) {
+            this.notebook?.setMinHeight(this.minHeight);
+        }
+        if (_changedProperties.has('gutterStyle') && this.gutterStyle) {
+            this.notebook?.setGutterStyle(this.gutterStyle);
+        }
+        if (_changedProperties.has('readOnly')) {
+            this.notebook?.setReadOnly(!!this.readOnly);
+        }
+        if (_changedProperties.has('nodeVersion') && this.nodeVersion) {
+            this.notebook?.setNodeVersion(this.nodeVersion);
+        }
     }
 }
 
