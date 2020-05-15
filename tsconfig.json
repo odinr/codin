@@ -23,12 +23,13 @@
     "composite": true,
   },
   "include": [
-    "./packages/*/tsconfig.json", 
+    "./packages/*/tsconfig.json"
   ],
   "exclude": ["node_modules"],
   "references": [
     {"path": "./packages/code-highlight"},
     {"path": "./packages/intersection"},
-    {"path": "./packages/picture"}
+    {"path": "./packages/picture"},
+    {"path": "./packages/runkit"}
   ]
 }

@@ -15,6 +15,7 @@
     "@codin/cwc-code-highlight": "../packages/code-highlight",
     "@codin/cwc-intersection": "../packages/intersection",
     "@codin/cwc-picture": "../packages/picture",
+    "@codin/cwc-runkit": "../packages/runkit",
     "@storybook/addon-backgrounds": "^5.3.18",
     "@storybook/addon-knobs": "^5.3.18",
     "@storybook/web-components": "^5.3.18",
