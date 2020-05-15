@@ -22,7 +22,8 @@
     "build:typescript": "tsc -b",
     "build:storybook": "npm --prefix stories run build",
     "postbuild:storybook": "git add docs && git commit -m 'doc: update docs 📑'",
-    "prepack": "npm run build"
+    "prepack": "npm run build",
+    "postpublish": "npm run build:storybook"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.1.0",
