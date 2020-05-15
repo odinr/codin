@@ -25,6 +25,18 @@ const getFileContent = async (src: string) => {
   return content.trim();
 };
 
+/**
+ * @TODO
+ */
+const decode = (str: string) => {
+ return str.replace(/&nbsp;/gmi, " ")
+          .replace(/&amp;/gmi, "&")
+          .replace(/&quot;/gmi, `"`)
+          .replace(/&lt;/gmi, "<")
+          .replace(/&gt;/gmi, ">");
+  // return str.replace(/&#(\d+);/gm, (_, dec) => String.fromCharCode(dec));
+}
+
 @customElement('cwc-code-highlight')
 export class CodeHighlightElement extends LitElement {
   static styles = styles;
@@ -57,7 +69,8 @@ export class CodeHighlightElement extends LitElement {
   }
 
   public get source(): string {
-    return this.codeElement.innerText.trim();
+    const source = decode(this.codeElement.innerHTML);
+    return source.replace(/<br>/gm, "\n");
   }
 
   connectedCallback() {
@@ -109,7 +122,7 @@ export class CodeHighlightElement extends LitElement {
         getFileContent(value)
           .then(code => {
             this.language = value.split('.').pop()!;
-            this.codeElement.innerHTML = code;
+            this.codeElement.innerText = code;
           })
           .catch(console.error);
       }

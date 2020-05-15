@@ -72,7 +72,7 @@ export const style = css`
     color: var(--code-token-inserted-color, var(--code-t-selector));
   }
   .token.builtin {
-    color: var(--code-token-builtin-color, #fcca5b);
+    color: var(--code-token-builtin-color, #ecaa5a);
   }
 
   .token.operator {

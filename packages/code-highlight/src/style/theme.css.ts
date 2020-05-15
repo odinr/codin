@@ -13,6 +13,7 @@ export const style = css`
 
     --code-highlight-background: rgba(0,200,200,.2);
 
+    --code-token-builtin-color: #fcca5b;
     --code-token-string-color: #bce089;
     --code-token-punctuation-color: #bbb;
     --code-token-number-color: #1EA7FD;
