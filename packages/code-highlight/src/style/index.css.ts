@@ -4,8 +4,11 @@ export const style = css`
 
   :host([plain]) #index {
     flex: 0 0 0 !important;
+    width: 0;
     margin: 0;
     overflow: hidden;
+    padding: 0;
+    margin: 0;
   }
 
   #index {
@@ -19,6 +22,7 @@ export const style = css`
     flex-flow: column;
     margin-right: 1rem;
     counter-reset: linenumber;
+    justify-content: space-evenly;
   }
 
   #index > span {

@@ -19,6 +19,7 @@ export const style = css`
 
   pre, code {
     font-family: var(--code-font-family, "Fira Code", "Ubuntu Mono", monospace);
+    line-height: var(--code-line-height, 1.4);
     z-index: 1;
   }
 

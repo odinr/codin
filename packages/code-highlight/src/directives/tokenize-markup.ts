@@ -16,7 +16,7 @@ const loadTemplate = templateLoader({ cdn: 'https://unpkg.com/prismjs@1.20.0' })
 
 const renderTemplate = (part: Part) => (template: any) => {
   const { code, language } = previousValues.get(part)!;
-  const tokens = Prism.highlight(code, template, language);
+  const tokens = Prism.highlight(code, template, language) as string;
   part.setValue(unsafeHTML(tokens));
   part.commit();
 };
