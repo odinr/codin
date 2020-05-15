@@ -29,6 +29,6 @@
     "lit-html": "1.2.x"
   },
   "devDependencies": {
-    "rollup": "2.7.6"
+    "rollup": "2.10.2"
   }
 }

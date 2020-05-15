@@ -33,6 +33,6 @@
     "@codin/cwc-intersection": "^0.3.3"
   },
   "devDependencies": {
-    "rollup": "2.7.6"
+    "rollup": "2.10.2"
   }
 }
