@@ -23,7 +23,7 @@
     "composite": true,
   },
   "include": [
-    "./packages/*/tsconfig.json", 
+    "./packages/*/tsconfig.json"
   ],
   "exclude": ["node_modules"],
   "references": [
