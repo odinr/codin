@@ -46,6 +46,6 @@
     "doc": "typedoc --target es6 --mode modules --excludeNotExported --excludePrivate --ignoreCompilerErrors --out ./docs src"
   },
   "dependencies": {
-    "prettier": "^2.0.4"
+    "prettier": "^2.0.5"
   }
 }
