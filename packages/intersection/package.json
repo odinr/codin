@@ -35,6 +35,6 @@
     "intersection-observer": "^0.10.0"
   },
   "devDependencies": {
-    "rollup": "2.10.2"
+    "rollup": "2.10.4"
   }
 }
