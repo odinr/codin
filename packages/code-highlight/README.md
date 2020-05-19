@@ -6,4 +6,4 @@
 * **cdn** - provide cdn for unresolved languages (default: unpkg)
 
 
-see demo [Codin web components](https://www.npmjs.com/package/@codin/)
+see demo [Codin web components](https://github.com/odinr/codin/)
