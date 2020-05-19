@@ -1,7 +1,8 @@
 {
   "name": "@codin/cwc-picture",
   "version": "0.3.7",
-  "description": "",
+  "description": "Web component for displaying images",
+  "keywords": ["web component", "lit-html", "lit-element", "picture", "image", "lazy load", "scaling"],
   "author": "Odin thomas Rochmann",
   "license": "MIT",
   "private": false,

@@ -1,8 +1,8 @@
-[![npm version](https://img.shields.io/npm/v/@codin/cwc-picture?style=for-the-badge)](www.vg.no)
-
 # Picture element
 
-> this element is not polyfilled for IE, so sources will not change.
+> Simple web component for displaying images. Lazy loading on intersection and strategy for wrapping
+
+see demo [Codin web components](https://github.com/odinr/codin/)
 
 ## example
 ```html
