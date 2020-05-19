@@ -31,8 +31,5 @@
   },
   "dependencies": {
     "@codin/cwc-intersection": "^0.3.4"
-  },
-  "devDependencies": {
-    "rollup": "2.10.4"
   }
 }

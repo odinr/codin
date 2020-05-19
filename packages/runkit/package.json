@@ -27,8 +27,5 @@
   "peerDependencies": {
     "lit-element": "2.3.x",
     "lit-html": "1.2.x"
-  },
-  "devDependencies": {
-    "rollup": "2.10.4"
   }
 }
