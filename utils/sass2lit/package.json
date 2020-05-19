@@ -1,9 +1,16 @@
 {
   "name": "@codin/util-sass2lit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
-  "keywords": ["transpile", "sass", "custom element", "lit-html", "lit-element", "util"],
+  "keywords": [
+    "transpile",
+    "sass",
+    "custom element",
+    "lit-html",
+    "lit-element",
+    "util"
+  ],
   "author": "Odin thomas Rochmann",
   "license": "MIT",
   "private": false,
