@@ -14,14 +14,12 @@
   "scripts": {
     "clean": "lerna clean --yes && del-cli packages/*/package-lock.json && npm run clean:typescript",
     "clean:typescript": "npm run build:typescript -- --clean",
-    "bootstrap": "npm install",
-    "update-packages": "lerna exec -- npx npm-check-updates -u",
-    "postupdate-packages": "lerna bootstrap --hoist",
     "postinstall": "lerna bootstrap --hoist",
     "build": "npm run build:typescript -- --verbose",
     "build:typescript": "tsc -b",
     "build:storybook": "npm --prefix stories run build",
     "postbuild:storybook": "git add docs && git commit -m 'doc: update docs 📑'",
+    "prepublish": "lerna bootstrap --hoist",
     "prepack": "npm run build",
     "postpublish": "npm run build:storybook"
   },
@@ -40,12 +38,12 @@
     "rollup-plugin-progress": "^1.1.1",
     "rollup-plugin-terser": "^5.3.0",
     "tslib": "^2.0.0",
-    "typescript": "3.9.2"
+    "typescript": "3.9.2",
+    "prettier": "^2.0.4"
   },
   "_later": {
     "doc": "typedoc --target es6 --mode modules --excludeNotExported --excludePrivate --ignoreCompilerErrors --out ./docs src"
   },
   "dependencies": {
-    "prettier": "^2.0.4"
   }
 }
