@@ -6,7 +6,7 @@
 
 ## Elements
 
-* [cwc-codehighlight](https://github.com/odinr/codin/tree/master/packages/code-highlight) - code highlighting (PrismJs)
+* [cwc-code-highlight](https://github.com/odinr/codin/tree/master/packages/code-highlight) - code highlighting (PrismJs)
 
 * [cwc-intersection](https://github.com/odinr/codin/tree/master/packages/intersection) - intersection element and utils
 
