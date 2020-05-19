@@ -1,0 +1,32 @@
+{
+  "name": "@codin/util-sass2lit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": ["transpile", "sass", "custom element", "lit-html", "lit-element", "util"],
+  "author": "Odin thomas Rochmann",
+  "license": "MIT",
+  "private": false,
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/odinr/codin/utils/sass2lit/"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "glob": "^7.1.6",
+    "node-sass-import": "^2.0.1",
+    "sass": "^1.26.3",
+    "yargs": "^15.3.1"
+  },
+  "devDependencies": {
+    "chalk": "^4.0.0"
+  },
+  "bin": {
+    "sass2lit": "index.js"
+  }
+}

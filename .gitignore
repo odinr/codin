@@ -9,5 +9,3 @@ packages/*/build
 packages/*/dist
 packages/*/lib
 packages/*/*.js
-
-utils/**/*
