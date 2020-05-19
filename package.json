@@ -40,7 +40,7 @@
     "rollup-plugin-progress": "^1.1.1",
     "rollup-plugin-terser": "^5.3.0",
     "tslib": "^2.0.0",
-    "typescript": "3.8.3"
+    "typescript": "3.9.2"
   },
   "_later": {
     "doc": "typedoc --target es6 --mode modules --excludeNotExported --excludePrivate --ignoreCompilerErrors --out ./docs src"
