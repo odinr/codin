@@ -3,13 +3,8 @@
 @use "./variables";
 @use "./mixins";
 
-$max-width: 1020px !default;
-
 :host {
   display: block;
-
-  max-width: var(--max-width, 1000px);
-
   @each $size in map.keys(variables.$columns) {
     --mdc-layout-grid-margin-#{$size}: #{map.get(
         variables.$default-margin,
