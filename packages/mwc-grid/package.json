@@ -1,0 +1,47 @@
+{
+  "name": "@codin/mwc-grid",
+  "version": "0.0.0",
+  "description": "Element for highlighting code",
+  "keywords": [
+    "material design",
+    "grid",
+    "web component",
+    "lit-html",
+    "lit-element",
+    "layout"
+  ],
+  "author": "Odin thomas Rochmann",
+  "license": "MIT",
+  "private": false,
+  "main": "lib/grid.js",
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/odinr/codin/packages/code-highlight/"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "lib"
+  ],
+  "scripts": {
+    "postinstall": "npx sass2lit src",
+    "prebuild": "npx sass2lit src",
+    "build": "tsc -b",
+    "prepack": "npx rollup -c ../rollup.config.js"
+  },
+  "peerDependencies": {
+    "lit-element": "2.3.x",
+    "lit-html": "1.2.x"
+  },
+  "dependencies": {
+    "@material/layout-grid": "^6.0.0"
+  },
+  "devDependencies": {
+    "@codin/util-sass2lit": "^1.0.0"
+  }
+}
