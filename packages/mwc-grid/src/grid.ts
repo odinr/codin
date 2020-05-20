@@ -1,6 +1,7 @@
 import { customElement, LitElement, property, html } from "lit-element";
 
 import './grid-inner';
+import './grid-cell';
 
 import style from './style/grid.scss';
 
@@ -13,7 +14,7 @@ export class MwcGrid extends LitElement {
     public align?: 'left' | 'right';
 
     render() {
-        return html`<mdc-grid-inner><slot></slot></mdc-grid-inner>`;
+        return html`<mwc-grid-inner><slot></slot></mwc-grid-inner>`;
     }
 }
 

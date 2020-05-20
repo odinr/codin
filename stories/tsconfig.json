@@ -7,18 +7,10 @@
     "declaration": false
   },
   "include": [
-    "src/**/*.ts", "typings/*.d.ts"
+    "src/**/*.ts",
+    "typings/*.d.ts"
   ],
-  "exclude": ["**/static/**/*"],
-  "references": [
-    {
-      "path": "../packages/intersection", "prepend": true 
-    },
-    {
-      "path": "../packages/intersection", "prepend": true 
-    },
-    {
-      "path": "../packages/code-highlight", "prepend": true 
-    }
+  "exclude": [
+    "**/static/**/*"
   ]
 }
