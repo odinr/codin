@@ -1,6 +1,6 @@
 {
   "name": "@codin/mwc-grid",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Element for highlighting code",
   "keywords": [
     "material design",
@@ -42,6 +42,6 @@
     "@material/layout-grid": "^6.0.0"
   },
   "devDependencies": {
-    "@codin/util-sass2lit": "^1.0.0"
+    "@codin/util-sass2lit": "^1.0.2"
   }
 }
