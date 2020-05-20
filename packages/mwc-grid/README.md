@@ -1,4 +1,4 @@
-#Grid
+# Grid
 
 > Simple component that implements Material Design grid
 
