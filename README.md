@@ -16,4 +16,4 @@
 
 ### Material Design
 > missing MDC or enhancement of existing components, see [material-components-web-components](https://github.com/material-components/material-components-web-components)
-* [mwc-grid](https://github.com/odinr/codin/tree/master/packages/mwc-grid) - web component for grid
+* [mwc-grid](./packages/mwc-grid) - web component for grid
