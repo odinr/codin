@@ -4,16 +4,16 @@
 
 ```html
 <mwc-grid>
-    <mwc-grid-element desktop="6">
+    <mwc-grid-cell desktop="6">
         <p>some content</p>
-    </mwc-grid-element>
-    <mwc-grid-element desktop="6">
+    </mwc-grid-cell>
+    <mwc-grid-cell desktop="6">
         <mwc-grid-inner>
-            <mwc-grid-element span="8">
+            <mwc-grid-cell span="8">
                 <p>some other content</p>
-            </mwc-grid-element>
+            </mwc-grid-cell>
         </mwc-grid-inner>
-    </mwc-grid-element>
+    </mwc-grid-cell>
 </mwc-grid>
 ```
 
