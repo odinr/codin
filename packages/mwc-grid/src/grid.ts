@@ -17,9 +17,6 @@ export class MwcGrid extends LitElement {
     }
 }
 
-export * from './grid-inner';
-export * from './grid-cell';
-
 export default MwcGrid;
 
 declare global {
