@@ -6,7 +6,7 @@ require("yargs")
   .demandCommand(1)
   .strict()
   .command(
-    "all <source>",
+    "$0 <source>",
     "Transpile all files from provided source",
     yargs => {
       yargs.positional("source", {
@@ -15,7 +15,6 @@ require("yargs")
       });
     },
     argv => {
-      console.log(argv);
       const {template, source, sufix} = argv;
       const parser = require("./sass2css");
       parser.transpilesFiles(source, template, sufix);
