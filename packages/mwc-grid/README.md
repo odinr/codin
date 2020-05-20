@@ -2,6 +2,21 @@
 
 > Simple component that implements Material Design grid
 
+```html
+<mwc-grid>
+    <mwc-grid-element desktop="6">
+        <p>some content</p>
+    </mwc-grid-element>
+    <mwc-grid-element desktop="6">
+        <mwc-grid-inner>
+            <mwc-grid-element span="8">
+                <p>some other content</p>
+            </mwc-grid-element>
+        </mwc-grid-inner>
+    </mwc-grid-element>
+</mwc-grid>
+```
+
 ## Components
 
 ### mwc-grid
