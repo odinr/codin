@@ -6,13 +6,13 @@
 
 ## Elements
 
-* [cwc-code-highlight](https://github.com/odinr/codin/tree/master/packages/code-highlight) - code highlighting (PrismJs)
+* [cwc-code-highlight](./packages/code-highlight) - code highlighting (PrismJs)
 
-* [cwc-intersection](https://github.com/odinr/codin/tree/master/packages/intersection) - intersection element and utils
+* [cwc-intersection](./packages/intersection) - intersection element and utils
 
-* [cwc-picture](https://github.com/odinr/codin/tree/master/packages/picture) - light weigth lazyloading component for images
+* [cwc-picture](./packages/picture) - light weigth lazyloading component for images
 
-* [cwc-runkit](https://github.com/odinr/codin/tree/master/packages/runkit) - light weigth lazyloading component for images
+* [cwc-runkit](./packages/runkit) - light weigth lazyloading component for images
 
 ### Material Design
 > missing MDC or enhancement of existing components, see [material-components-web-components](https://github.com/material-components/material-components-web-components)
