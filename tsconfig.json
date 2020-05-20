@@ -17,6 +17,7 @@
     "baseUrl": "./packages",
     "paths": {
       "@codin/cwc-*": ["./*/src"],
+      "@codin/mwc-*": ["./*/src"],
     },
     "noEmitHelpers": true,
     "importHelpers": true,
@@ -30,6 +31,7 @@
     {"path": "./packages/code-highlight"},
     {"path": "./packages/intersection"},
     {"path": "./packages/picture"},
-    {"path": "./packages/runkit"}
+    {"path": "./packages/runkit"},
+    {"path": "./packages/mwc-grid"}
   ]
 }

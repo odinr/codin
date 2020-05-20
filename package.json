@@ -18,7 +18,6 @@
     "build": "npm run build:typescript -- --verbose",
     "build:typescript": "tsc -b",
     "build:storybook": "npm --prefix stories run build",
-    "postbuild:storybook": "git add docs && git commit -m 'doc: update docs 📑'",
     "prepublish": "lerna bootstrap --hoist",
     "prepack": "npm run build",
     "postpublish": "npm run build:storybook"

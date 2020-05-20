@@ -26,9 +26,10 @@ const delimiters = {
  * 
  * @returns processed files Promise<string[]>
  */
-async function transpilesFiles(cwd, tmpl = 'sass.tmpl.ts', sufix = ".ts") {
+async function transpilesFiles(cwd, tmpl, sufix = ".ts") {
   const files = await fileLoader.findSassFiles(cwd);
   try{
+    tmpl = tmpl || path.join(__dirname, "sass.tmpl.ts");
     const template = await loadTemplate(tmpl);
     console.log('Loaded template ', chalk.yellowBright(tmpl))
     const convert = file => transpileFile(file, template, file + sufix);
