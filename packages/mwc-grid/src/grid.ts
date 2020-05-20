@@ -4,8 +4,8 @@ import './grid-inner';
 
 import style from './style/grid.scss';
 
-@customElement('mdc-grid')
-export class MdcGrid extends LitElement {
+@customElement('mwc-grid')
+export class MwcGrid extends LitElement {
 
     static styles = [style];
 
@@ -19,3 +19,11 @@ export class MdcGrid extends LitElement {
 
 export * from './grid-inner';
 export * from './grid-cell';
+
+export default MwcGrid;
+
+declare global {
+  interface HTMLElementTagNameMap {
+    "mwc-grid": MwcGrid;
+  }
+}

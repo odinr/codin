@@ -1,10 +1,9 @@
 import { customElement, LitElement, property, html } from "lit-element";
 
 import style from './style/grid-cell.scss';
-console.log(style);
 
-@customElement('mdc-grid-cell')
-export class MdcGrid extends LitElement {
+@customElement('mwc-grid-cell')
+export class MwcGridCell extends LitElement {
 
     static styles = [style];
 
@@ -30,4 +29,12 @@ export class MdcGrid extends LitElement {
     render() {
         return html`<slot></slot>`;
     }
+}
+
+export default MwcGridCell;
+
+declare global {
+  interface HTMLElementTagNameMap {
+    "mwc-grid-cell": MwcGridCell;
+  }
 }
