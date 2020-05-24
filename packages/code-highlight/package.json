@@ -1,6 +1,6 @@
 {
   "name": "@codin/cwc-code-highlight",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "description": "Element for highlighting code",
   "keywords": [
     "prismjs",

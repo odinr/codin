@@ -1,6 +1,6 @@
 {
   "name": "@codin/cwc-picture",
-  "version": "0.3.8",
+  "version": "0.3.9",
   "description": "Web component for displaying images",
   "keywords": [
     "web component",
@@ -39,6 +39,6 @@
     "lit-html": "1.2.x"
   },
   "dependencies": {
-    "@codin/cwc-intersection": "^0.3.7"
+    "@codin/cwc-intersection": "^0.3.8"
   }
 }
