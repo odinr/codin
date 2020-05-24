@@ -13,6 +13,7 @@
       "allowBranch": ["master", "feature/*"]
     },
     "bootstrap": {
+      "hoist": true,
       "npmClientArgs": [
         "--no-package-lock"
       ]
