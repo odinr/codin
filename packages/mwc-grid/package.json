@@ -29,7 +29,6 @@
     "lib"
   ],
   "scripts": {
-    "postinstall": "npx sass2lit src",
     "prebuild": "npx sass2lit src",
     "build": "tsc -b",
     "prepack": "npx rollup -c ../rollup.config.js"

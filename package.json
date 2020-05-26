@@ -12,8 +12,9 @@
     "url": "git@github.com:odinr/codin.git"
   },
   "scripts": {
-    "clean": "lerna clean --yes && del-cli packages/*/package-lock.json && npm run clean:typescript",
+    "clean": "lerna clean --yes && del-cli packages/*/package-lock.json && npm run clean:typescript && npm run clean:styles",
     "clean:typescript": "npm run build:typescript -- --clean",
+    "clean:styles": "del-cli packages/*/src/*.scss.ts",
     "postinstall": "lerna bootstrap --hoist",
     "build": "npm run build:typescript -- --verbose",
     "build:typescript": "tsc -b",
