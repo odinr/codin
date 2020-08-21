@@ -39,7 +39,7 @@
     "rollup-plugin-progress": "^1.1.1",
     "rollup-plugin-terser": "^5.3.0",
     "tslib": "^2.0.0",
-    "typescript": "3.9.3",
+    "typescript": "4.0.2",
     "prettier": "^2.0.4"
   },
   "_later": {
