@@ -31,6 +31,6 @@
   },
   "dependencies": {
     "custom-event-polyfill": "^1.0.7",
-    "intersection-observer": "^0.10.0"
+    "intersection-observer": "^0.12.0"
   }
 }
