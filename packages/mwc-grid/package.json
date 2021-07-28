@@ -38,7 +38,7 @@
     "lit-html": "1.2.x"
   },
   "dependencies": {
-    "@material/layout-grid": "^6.0.0"
+    "@material/layout-grid": "^12.0.0"
   },
   "devDependencies": {
     "@codin/util-sass2lit": "^1.0.5"
